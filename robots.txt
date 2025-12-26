@@ -1,0 +1,11 @@
+# Robots.txt for homecalcs.xyz
+# https://homecalcs.xyz
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://homecalcs.xyz/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
