@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stair Calculator - Rise, Run & Stringer Layout | HomeCalcs</title>
+    <meta name="description" content="Free stair calculator. Calculate stair dimensions, rise, run, and stringer layout for your project.">
+    <meta name="keywords" content="stair calculator, stair rise run, stair stringer, staircase calculator, stair dimensions">
+    <link rel="canonical" href="https://homecalcs.xyz/stair-calculator.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; --error: #ef4444; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero.valid { background: linear-gradient(135deg, var(--success), #059669); }
+        .result-hero.invalid { background: linear-gradient(135deg, var(--error), #dc2626); }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .code-box { padding: 15px; background: var(--bg-input); border-radius: 10px; margin-top: 15px; }
+        .code-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .code-row:last-child { border-bottom: none; }
+        .code-status { padding: 2px 8px; border-radius: 5px; font-size: 0.8rem; }
+        .code-status.pass { background: var(--success); }
+        .code-status.fail { background: var(--error); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>📶 Stair Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Stair Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Total Rise (inches)</label>
+                        <input type="number" id="totalRise" value="108" step="0.5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Desired Stair Width (inches)</label>
+                        <input type="number" id="stairWidth" value="36" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Target Rise per Step (inches)</label>
+                        <input type="number" id="targetRise" value="7.5" step="0.25" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Target Run per Step (inches)</label>
+                        <input type="number" id="targetRun" value="10" step="0.25" oninput="calculate()">
+                    </div>
+                </div>
+                
+                <div class="result-hero valid" id="resultHero">
+                    <div class="result-hero-label">Stair Configuration</div>
+                    <div class="result-hero-value" id="stepCount">0 Steps</div>
+                    <div style="color: rgba(255,255,255,0.8); margin-top: 10px;" id="codeStatus">✓ Meets Code</div>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="actualRise">0"</div>
+                        <div class="result-label">Rise per Step</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="actualRun">0"</div>
+                        <div class="result-label">Run per Step</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalRun">0"</div>
+                        <div class="result-label">Total Run</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="stringerLength">0"</div>
+                        <div class="result-label">Stringer Length</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📋 Building Code Check (IRC)</h2>
+                <div class="code-box">
+                    <div class="code-row">
+                        <span>Max Rise: 7.75"</span>
+                        <span class="code-status pass" id="riseCheck">PASS</span>
+                    </div>
+                    <div class="code-row">
+                        <span>Min Run: 10"</span>
+                        <span class="code-status pass" id="runCheck">PASS</span>
+                    </div>
+                    <div class="code-row">
+                        <span>Rise + Run: 17-18"</span>
+                        <span class="code-status pass" id="sumCheck">PASS</span>
+                    </div>
+                    <div class="code-row">
+                        <span>Min Width: 36"</span>
+                        <span class="code-status pass" id="widthCheck">PASS</span>
+                    </div>
+                    <div class="code-row">
+                        <span>Headroom: 80" min</span>
+                        <span class="code-status pass">CHECK</span>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 15px; font-size: 0.9rem;">⚠️ Always verify with local building codes</p>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="concrete-calculator.html" class="related-link">🧱 Concrete Calculator</a>
+                    <a href="deck-calculator.html" class="related-link">🏠 Deck Calculator</a>
+                    <a href="square-footage-calculator.html" class="related-link">📐 Square Footage</a>
+                    <a href="lumber-calculator.html" class="related-link">🪵 Lumber Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const totalRiseIn = parseFloat(document.getElementById('totalRise').value) || 0;
+            const stairWidth = parseFloat(document.getElementById('stairWidth').value) || 36;
+            const targetRise = parseFloat(document.getElementById('targetRise').value) || 7.5;
+            const targetRun = parseFloat(document.getElementById('targetRun').value) || 10;
+            
+            const numSteps = Math.round(totalRiseIn / targetRise);
+            const actualRise = totalRiseIn / numSteps;
+            const actualRun = targetRun;
+            const totalRun = actualRun * (numSteps - 1);
+            const stringerLength = Math.sqrt(totalRiseIn * totalRiseIn + totalRun * totalRun);
+            
+            document.getElementById('stepCount').textContent = numSteps + ' Steps';
+            document.getElementById('actualRise').textContent = actualRise.toFixed(2) + '"';
+            document.getElementById('actualRun').textContent = actualRun.toFixed(2) + '"';
+            document.getElementById('totalRun').textContent = totalRun.toFixed(1) + '"';
+            document.getElementById('stringerLength').textContent = stringerLength.toFixed(1) + '"';
+            
+            // Code checks
+            const risePass = actualRise <= 7.75;
+            const runPass = actualRun >= 10;
+            const sum = actualRise + actualRun;
+            const sumPass = sum >= 17 && sum <= 18;
+            const widthPass = stairWidth >= 36;
+            
+            document.getElementById('riseCheck').textContent = risePass ? 'PASS' : 'FAIL';
+            document.getElementById('riseCheck').className = 'code-status ' + (risePass ? 'pass' : 'fail');
+            document.getElementById('runCheck').textContent = runPass ? 'PASS' : 'FAIL';
+            document.getElementById('runCheck').className = 'code-status ' + (runPass ? 'pass' : 'fail');
+            document.getElementById('sumCheck').textContent = sumPass ? 'PASS' : 'FAIL';
+            document.getElementById('sumCheck').className = 'code-status ' + (sumPass ? 'pass' : 'fail');
+            document.getElementById('widthCheck').textContent = widthPass ? 'PASS' : 'FAIL';
+            document.getElementById('widthCheck').className = 'code-status ' + (widthPass ? 'pass' : 'fail');
+            
+            const allPass = risePass && runPass && widthPass;
+            document.getElementById('resultHero').className = 'result-hero ' + (allPass ? 'valid' : 'invalid');
+            document.getElementById('codeStatus').textContent = allPass ? '✓ Meets Code' : '⚠️ Code Issues';
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>

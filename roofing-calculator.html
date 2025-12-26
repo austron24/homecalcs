@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roofing Calculator - Shingles, Squares & Cost | HomeCalcs</title>
+    <meta name="description" content="Free roofing calculator. Calculate how many shingles, roofing squares, underlayment, and nails you need for your roof.">
+    <meta name="keywords" content="roofing calculator, shingles calculator, roof squares, roofing materials, roof cost">
+    <link rel="canonical" href="https://homecalcs.xyz/roofing-calculator.html">
+    <style>
+        :root { --primary: #991b1b; --primary-dark: #7f1d1d; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.2rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.8rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🏠 Roofing Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Roof Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Roof Length (feet)</label>
+                        <input type="number" id="length" value="40" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Roof Width (feet)</label>
+                        <input type="number" id="width" value="25" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Roof Pitch</label>
+                        <select id="pitch" onchange="calculate()">
+                            <option value="1.0">Flat (0/12)</option>
+                            <option value="1.03">Low (3/12)</option>
+                            <option value="1.08" selected>Medium (5/12)</option>
+                            <option value="1.12">Standard (6/12)</option>
+                            <option value="1.20">Steep (8/12)</option>
+                            <option value="1.30">Very Steep (10/12)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Waste Factor</label>
+                        <select id="waste" onchange="calculate()">
+                            <option value="1.10" selected>10% (Simple roof)</option>
+                            <option value="1.15">15% (Complex roof)</option>
+                            <option value="1.20">20% (Very complex)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Roofing Squares</div>
+                    <div class="result-hero-value" id="squares">0 squares</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="sqft">0</div>
+                        <div class="result-label">Total Sq Ft</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="bundles">0</div>
+                        <div class="result-label">Bundles</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="underlayment">0</div>
+                        <div class="result-label">Underlayment Rolls</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="nails">0</div>
+                        <div class="result-label">Nail Boxes (5lb)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Cost Estimates</h2>
+                <div class="breakdown-row"><span>3-Tab Shingles (~$90/sq)</span><span id="cost3tab">$0</span></div>
+                <div class="breakdown-row"><span>Architectural (~$130/sq)</span><span id="costArch">$0</span></div>
+                <div class="breakdown-row"><span>Premium (~$200/sq)</span><span id="costPremium">$0</span></div>
+                <div class="breakdown-row"><span>Labor (~$75-150/sq)</span><span id="costLabor">$0</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="gutter-calculator.html" class="related-link">🏠 Gutters</a>
+                    <a href="siding-calculator.html" class="related-link">🏡 Siding</a>
+                    <a href="square-footage-calculator.html" class="related-link">📐 Square Footage</a>
+                    <a href="pitch-calculator.html" class="related-link">📏 Roof Pitch</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const pitch = parseFloat(document.getElementById('pitch').value);
+            const waste = parseFloat(document.getElementById('waste').value);
+
+            const baseArea = length * width;
+            const actualArea = baseArea * pitch * waste;
+            const squares = actualArea / 100;
+            const bundles = Math.ceil(squares * 3);
+            const underlayment = Math.ceil(actualArea / 400);
+            const nails = Math.ceil(squares * 2.5);
+
+            document.getElementById('sqft').textContent = Math.round(actualArea) + ' sq ft';
+            document.getElementById('squares').textContent = squares.toFixed(1) + ' squares';
+            document.getElementById('bundles').textContent = bundles + ' bundles';
+            document.getElementById('underlayment').textContent = underlayment + ' rolls';
+            document.getElementById('nails').textContent = nails + ' boxes';
+
+            document.getElementById('cost3tab').textContent = '$' + Math.round(squares * 90);
+            document.getElementById('costArch').textContent = '$' + Math.round(squares * 130);
+            document.getElementById('costPremium').textContent = '$' + Math.round(squares * 200);
+            document.getElementById('costLabor').textContent = '$' + Math.round(squares * 75) + ' - $' + Math.round(squares * 150);
+        }
+        calculate();
+    </script>
+</body>
+</html>

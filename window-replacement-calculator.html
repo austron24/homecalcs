@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Replacement Calculator - Estimate New Windows Cost | HomeCalcs</title>
+    <meta name="description" content="Free window replacement calculator. Estimate costs for new windows including vinyl, wood, and fiberglass. Calculate by window type and size.">
+    <meta name="keywords" content="window replacement calculator, window cost, new windows, vinyl windows, window installation">
+    <link rel="canonical" href="https://homecalcs.xyz/window-replacement-calculator.html">
+    <style>
+        :root { --primary: #0ea5e9; --primary-dark: #0284c7; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .breakdown-row:last-child { border-bottom: none; }
+        .info-box { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid var(--accent); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🪟 Window Replacement Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🏠 Window Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Number of Windows</label>
+                        <input type="number" id="count" value="10" min="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Window Size</label>
+                        <select id="size" onchange="calculate()">
+                            <option value="small">Small (24x36")</option>
+                            <option value="medium" selected>Medium (36x48")</option>
+                            <option value="large">Large (48x60")</option>
+                            <option value="picture">Picture Window (60x72")</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Frame Material</label>
+                        <select id="material" onchange="calculate()">
+                            <option value="vinyl" selected>Vinyl</option>
+                            <option value="wood">Wood</option>
+                            <option value="fiberglass">Fiberglass</option>
+                            <option value="aluminum">Aluminum</option>
+                            <option value="composite">Composite</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Window Type</label>
+                        <select id="type" onchange="calculate()">
+                            <option value="doubleHung" selected>Double-Hung</option>
+                            <option value="casement">Casement</option>
+                            <option value="sliding">Sliding</option>
+                            <option value="bay">Bay/Bow</option>
+                            <option value="picture">Picture (fixed)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Glass Type</label>
+                        <select id="glass" onchange="calculate()">
+                            <option value="double" selected>Double Pane</option>
+                            <option value="triple">Triple Pane</option>
+                            <option value="lowE">Low-E Coating</option>
+                            <option value="argon">Argon Filled</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Installation</label>
+                        <select id="install" onchange="calculate()">
+                            <option value="retrofit" selected>Retrofit (insert)</option>
+                            <option value="fullFrame">Full Frame Replacement</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Estimated Total Cost</div>
+                <div class="result-hero-value" id="totalCost">$0 - $0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="perWindow">$0</div>
+                    <div class="result-label">Per Window (avg)</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="materialCost">$0</div>
+                    <div class="result-label">Materials Only</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="laborCost">$0</div>
+                    <div class="result-label">Installation</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Cost Breakdown</h2>
+                <div class="breakdown-row"><span>Window Units</span><span id="windowCost">$0</span></div>
+                <div class="breakdown-row"><span>Installation Labor</span><span id="installCost">$0</span></div>
+                <div class="breakdown-row"><span>Trim & Finishing</span><span id="trimCost">$0</span></div>
+                <div class="breakdown-row"><span>Disposal/Removal</span><span id="disposalCost">$0</span></div>
+            </div>
+
+            <div class="card">
+                <h2>💡 Energy Savings</h2>
+                <div class="info-box">
+                    New energy-efficient windows can save <strong id="energySavings">15-30%</strong> on heating and cooling costs. With your selection, estimated annual savings: <strong id="annualSavings">$150-$400</strong>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="siding-calculator.html" class="related-link">🏠 Siding Calculator</a>
+                    <a href="insulation-calculator.html" class="related-link">🧊 Insulation</a>
+                    <a href="hvac-calculator.html" class="related-link">❄️ HVAC Size</a>
+                    <a href="home-renovation-calculator.html" class="related-link">🔨 Renovation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pricing = {
+            materials: {
+                vinyl: { low: 150, high: 400 },
+                wood: { low: 300, high: 800 },
+                fiberglass: { low: 400, high: 900 },
+                aluminum: { low: 200, high: 500 },
+                composite: { low: 350, high: 700 }
+            },
+            sizes: {
+                small: 0.7,
+                medium: 1.0,
+                large: 1.4,
+                picture: 2.0
+            },
+            types: {
+                doubleHung: 1.0,
+                casement: 1.15,
+                sliding: 0.9,
+                bay: 2.5,
+                picture: 0.8
+            },
+            glass: {
+                double: 1.0,
+                triple: 1.3,
+                lowE: 1.15,
+                argon: 1.2
+            },
+            install: {
+                retrofit: { low: 100, high: 200 },
+                fullFrame: { low: 200, high: 400 }
+            }
+        };
+
+        function calculate() {
+            const count = parseInt(document.getElementById('count').value) || 1;
+            const size = document.getElementById('size').value;
+            const material = document.getElementById('material').value;
+            const type = document.getElementById('type').value;
+            const glass = document.getElementById('glass').value;
+            const install = document.getElementById('install').value;
+
+            const baseLow = pricing.materials[material].low;
+            const baseHigh = pricing.materials[material].high;
+            const sizeMult = pricing.sizes[size];
+            const typeMult = pricing.types[type];
+            const glassMult = pricing.glass[glass];
+
+            const windowLow = baseLow * sizeMult * typeMult * glassMult;
+            const windowHigh = baseHigh * sizeMult * typeMult * glassMult;
+            const windowAvg = (windowLow + windowHigh) / 2;
+
+            const installLow = pricing.install[install].low;
+            const installHigh = pricing.install[install].high;
+            const installAvg = (installLow + installHigh) / 2;
+
+            const trimPerWindow = 50;
+            const disposalPerWindow = 25;
+
+            const totalWindowCost = windowAvg * count;
+            const totalInstallCost = installAvg * count;
+            const totalTrimCost = trimPerWindow * count;
+            const totalDisposalCost = disposalPerWindow * count;
+
+            const totalLow = (windowLow + installLow + trimPerWindow + disposalPerWindow) * count;
+            const totalHigh = (windowHigh + installHigh + trimPerWindow + disposalPerWindow) * count;
+            const perWindowAvg = (totalLow + totalHigh) / 2 / count;
+
+            document.getElementById('totalCost').textContent = '$' + Math.round(totalLow).toLocaleString() + ' - $' + Math.round(totalHigh).toLocaleString();
+            document.getElementById('perWindow').textContent = '$' + Math.round(perWindowAvg).toLocaleString();
+            document.getElementById('materialCost').textContent = '$' + Math.round(totalWindowCost).toLocaleString();
+            document.getElementById('laborCost').textContent = '$' + Math.round(totalInstallCost).toLocaleString();
+            
+            document.getElementById('windowCost').textContent = '$' + Math.round(totalWindowCost).toLocaleString();
+            document.getElementById('installCost').textContent = '$' + Math.round(totalInstallCost).toLocaleString();
+            document.getElementById('trimCost').textContent = '$' + Math.round(totalTrimCost).toLocaleString();
+            document.getElementById('disposalCost').textContent = '$' + Math.round(totalDisposalCost).toLocaleString();
+
+            // Energy savings estimate
+            const savingsPercent = glass === 'triple' ? '25-35%' : glass === 'argon' ? '20-30%' : '15-25%';
+            const savingsLow = count * 15;
+            const savingsHigh = count * 40;
+            document.getElementById('energySavings').textContent = savingsPercent;
+            document.getElementById('annualSavings').textContent = '$' + savingsLow + '-$' + savingsHigh;
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

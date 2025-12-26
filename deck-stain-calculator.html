@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck Stain Calculator - How Much Stain Do I Need? | HomeCalcs</title>
+    <meta name="description" content="Free deck stain calculator. Calculate how many gallons of stain you need for your deck including railings and stairs.">
+    <meta name="keywords" content="deck stain calculator, wood stain, deck sealer, staining calculator, deck project">
+    <link rel="canonical" href="https://homecalcs.xyz/deck-stain-calculator.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--success), #059669); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.4rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.9rem; }
+        .breakdown { margin-top: 20px; }
+        .breakdown-item { display: flex; justify-content: space-between; padding: 15px; background: var(--bg-input); border-radius: 10px; margin-bottom: 10px; }
+        .tips { margin-top: 20px; }
+        .tip-card { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-bottom: 10px; display: flex; gap: 15px; align-items: flex-start; }
+        .tip-icon { font-size: 1.5rem; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>🪵 Deck Stain Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Deck Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Deck Length (ft)</label>
+                        <input type="number" id="length" value="20" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Deck Width (ft)</label>
+                        <input type="number" id="width" value="12" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Railing Length (linear ft)</label>
+                        <input type="number" id="railingLength" value="40" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Steps</label>
+                        <input type="number" id="steps" value="4" min="0" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Coats</label>
+                        <select id="coats" onchange="calculate()">
+                            <option value="1">1 Coat</option>
+                            <option value="2" selected>2 Coats</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Coverage (sq ft/gal)</label>
+                        <select id="coverage" onchange="calculate()">
+                            <option value="150">Rough (150 sq ft)</option>
+                            <option value="200" selected>Standard (200 sq ft)</option>
+                            <option value="250">Smooth (250 sq ft)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="result-hero">
+                    <div class="result-hero-label">Stain Needed</div>
+                    <div class="result-hero-value" id="gallonsNeeded">0 gal</div>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="deckSqft">0</div>
+                        <div class="result-label">Deck Surface</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="railingSqft">0</div>
+                        <div class="result-label">Railings</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="stepsSqft">0</div>
+                        <div class="result-label">Steps</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalSqft">0</div>
+                        <div class="result-label">Total Sq Ft</div>
+                    </div>
+                </div>
+                
+                <div class="breakdown">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px;">Cost Estimate</h3>
+                    <div class="breakdown-item">
+                        <span>Stain (~$35/gallon)</span>
+                        <span id="stainCost">$0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Stripper/Cleaner</span>
+                        <span id="cleanerCost">$50</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Brushes & Supplies</span>
+                        <span>$30</span>
+                    </div>
+                    <div class="breakdown-item" style="font-weight: 700;">
+                        <span>Total Materials</span>
+                        <span style="color: var(--success);" id="totalCost">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💡 Staining Tips</h2>
+                <div class="tips">
+                    <div class="tip-card">
+                        <div class="tip-icon">🧹</div>
+                        <div><strong>Prep is Key:</strong> Clean and sand the deck thoroughly before staining for best adhesion.</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🌤️</div>
+                        <div><strong>Weather Check:</strong> Stain when temps are 50-90°F with no rain expected for 24-48 hours.</div>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🪣</div>
+                        <div><strong>Buy Extra:</strong> Get 10-15% more stain than calculated for touch-ups and corners.</div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="paint-calculator.html" class="related-link">🎨 Paint Calculator</a>
+                    <a href="square-footage-calculator.html" class="related-link">📐 Square Footage</a>
+                    <a href="fence-calculator.html" class="related-link">🏗️ Fence Calculator</a>
+                    <a href="flooring-calculator.html" class="related-link">🪵 Flooring Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const railingLength = parseFloat(document.getElementById('railingLength').value) || 0;
+            const steps = parseInt(document.getElementById('steps').value) || 0;
+            const coats = parseInt(document.getElementById('coats').value) || 2;
+            const coverage = parseInt(document.getElementById('coverage').value) || 200;
+            
+            // Deck surface
+            const deckSqft = length * width;
+            
+            // Railings (both sides, ~3 sq ft per linear foot)
+            const railingSqft = railingLength * 3;
+            
+            // Steps (~3 sq ft per step including risers)
+            const stepsSqft = steps * 3;
+            
+            // Total with coats
+            const totalSqft = deckSqft + railingSqft + stepsSqft;
+            const totalWithCoats = totalSqft * coats;
+            
+            // Gallons needed
+            const gallonsExact = totalWithCoats / coverage;
+            const gallonsNeeded = Math.ceil(gallonsExact);
+            
+            // Costs
+            const stainCost = gallonsNeeded * 35;
+            const cleanerCost = Math.ceil(deckSqft / 200) * 25;
+            const totalCost = stainCost + cleanerCost + 30;
+            
+            document.getElementById('gallonsNeeded').textContent = gallonsNeeded + ' gal';
+            document.getElementById('deckSqft').textContent = deckSqft.toFixed(0) + ' sq ft';
+            document.getElementById('railingSqft').textContent = railingSqft.toFixed(0) + ' sq ft';
+            document.getElementById('stepsSqft').textContent = stepsSqft.toFixed(0) + ' sq ft';
+            document.getElementById('totalSqft').textContent = totalSqft.toFixed(0) + ' sq ft';
+            
+            document.getElementById('stainCost').textContent = '$' + stainCost;
+            document.getElementById('cleanerCost').textContent = '$' + cleanerCost;
+            document.getElementById('totalCost').textContent = '$' + totalCost;
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>

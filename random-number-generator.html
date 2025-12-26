@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator - Quick & Easy RNG | HomeCalcs</title>
+    <meta name="description" content="Free random number generator. Generate random numbers within any range, multiple numbers, or use for lottery picks.">
+    <meta name="keywords" content="random number generator, RNG, random picker, lottery numbers, random integer">
+    <link rel="canonical" href="https://homecalcs.xyz/random-number-generator.html">
+    <style>
+        :root { --primary: #dc2626; --primary-dark: #b91c1c; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .btn { background: var(--primary); border: none; padding: 20px 40px; border-radius: 10px; color: white; font-size: 1.2rem; cursor: pointer; display: block; width: 100%; margin-top: 20px; }
+        .btn:hover { background: var(--primary-dark); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 50px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 4rem; font-weight: 800; color: white; font-family: monospace; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .numbers-display { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 15px; }
+        .number-ball { background: var(--bg-input); padding: 15px 25px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; color: var(--secondary); }
+        .history { margin-top: 20px; }
+        .history-item { background: var(--bg-input); padding: 10px 15px; border-radius: 8px; margin-bottom: 5px; font-family: monospace; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🎲 Random Number Generator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🔢 Generate Random Numbers</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Minimum</label>
+                        <input type="number" id="min" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Maximum</label>
+                        <input type="number" id="max" value="100">
+                    </div>
+                    <div class="form-group">
+                        <label>How Many</label>
+                        <input type="number" id="count" value="1" min="1" max="20">
+                    </div>
+                </div>
+
+                <button class="btn" onclick="generate()">🎲 Generate!</button>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Your Random Number(s)</div>
+                    <div class="numbers-display" id="numbers">
+                        <div class="number-ball">?</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📜 History</h2>
+                <div class="history" id="history">
+                    <div class="history-item" style="color: var(--text-secondary);">Generate numbers to see history...</div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="password-generator.html" class="related-link">🔐 Password Generator</a>
+                    <a href="percentage-calculator.html" class="related-link">📊 Percentage</a>
+                    <a href="coin-flip.html" class="related-link">🪙 Coin Flip</a>
+                    <a href="dice-roller.html" class="related-link">🎲 Dice Roller</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let history = [];
+
+        function generate() {
+            const min = parseInt(document.getElementById('min').value) || 0;
+            const max = parseInt(document.getElementById('max').value) || 100;
+            const count = Math.min(20, Math.max(1, parseInt(document.getElementById('count').value) || 1));
+
+            const numbers = [];
+            for (let i = 0; i < count; i++) {
+                numbers.push(Math.floor(Math.random() * (max - min + 1)) + min);
+            }
+
+            // Display numbers
+            let html = '';
+            numbers.forEach(n => {
+                html += '<div class="number-ball">' + n + '</div>';
+            });
+            document.getElementById('numbers').innerHTML = html;
+
+            // Add to history
+            history.unshift(numbers.join(', '));
+            if (history.length > 10) history.pop();
+
+            let historyHtml = '';
+            history.forEach((item, i) => {
+                historyHtml += '<div class="history-item">' + (i + 1) + '. ' + item + '</div>';
+            });
+            document.getElementById('history').innerHTML = historyHtml;
+        }
+    </script>
+</body>
+</html>

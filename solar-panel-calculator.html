@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Calculator - System Size & Cost Estimator | HomeCalcs</title>
+    <meta name="description" content="Free solar panel calculator. Estimate system size, installation costs, savings, and payback period for residential solar panels.">
+    <meta name="keywords" content="solar panel calculator, solar installation cost, solar savings, solar payback, home solar system">
+    <link rel="canonical" href="https://homecalcs.xyz/solar-panel-calculator.html">
+    <style>
+        :root { --primary: #f59e0b; --primary-dark: #d97706; --secondary: #22d3ee; --accent: #10b981; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; color: #0f172a; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: #0f172a; }
+        .result-hero-label { color: rgba(15,23,42,0.8); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .breakdown-row:last-child { border-bottom: none; }
+        .savings-highlight { background: rgba(16, 185, 129, 0.2); border: 2px solid var(--success); padding: 20px; border-radius: 12px; margin-top: 15px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); color: #0f172a; }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>☀️ Solar Panel Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🏠 Your Energy Usage</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Monthly Electric Bill ($)</label>
+                        <input type="number" id="bill" value="150" min="50" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Electric Rate ($/kWh)</label>
+                        <input type="number" id="rate" value="0.13" step="0.01" min="0.05" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Sun Hours (peak hrs/day)</label>
+                        <select id="sunHours" onchange="calculate()">
+                            <option value="3.5">Low (3.5 hrs - Northwest)</option>
+                            <option value="4.5" selected>Average (4.5 hrs - Midwest)</option>
+                            <option value="5.5">High (5.5 hrs - South)</option>
+                            <option value="6.5">Excellent (6.5 hrs - Southwest)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Roof Condition</label>
+                        <select id="roof" onchange="calculate()">
+                            <option value="good" selected>Good (no replacement needed)</option>
+                            <option value="needs">Needs replacement soon</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Offset Goal</label>
+                        <select id="offset" onchange="calculate()">
+                            <option value="0.8">80% of usage</option>
+                            <option value="1.0" selected>100% of usage</option>
+                            <option value="1.2">120% (sell back excess)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Include Battery Storage</label>
+                        <select id="battery" onchange="calculate()">
+                            <option value="no" selected>No Battery</option>
+                            <option value="basic">Basic Battery (~10kWh)</option>
+                            <option value="premium">Premium Battery (~13kWh)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Estimated System Cost (after 30% tax credit)</div>
+                <div class="result-hero-value" id="netCost">$0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="systemSize">0 kW</div>
+                    <div class="result-label">System Size</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="numPanels">0</div>
+                    <div class="result-label">Est. # of Panels</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="payback">0 yrs</div>
+                    <div class="result-label">Payback Period</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Cost Breakdown</h2>
+                <div class="breakdown-row"><span>Gross System Cost</span><span id="grossCost">$0</span></div>
+                <div class="breakdown-row"><span>Federal Tax Credit (30%)</span><span id="taxCredit">-$0</span></div>
+                <div class="breakdown-row"><span>Battery (if selected)</span><span id="batteryCost">$0</span></div>
+                <div class="breakdown-row"><span><strong>Net Cost After Credits</strong></span><span id="netCostBreak"><strong>$0</strong></span></div>
+
+                <div class="savings-highlight">
+                    <strong>💰 25-Year Savings:</strong> <span id="totalSavings">$0</span><br>
+                    <small>Monthly savings: <span id="monthlySavings">$0</span> | Annual savings: <span id="annualSavings">$0</span></small>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="solar-calculator.html" class="related-link">☀️ Solar Basics</a>
+                    <a href="electricity-cost-calculator.html" class="related-link">⚡ Electric Cost</a>
+                    <a href="roofing-calculator.html" class="related-link">🏠 Roofing</a>
+                    <a href="home-value-calculator.html" class="related-link">🏡 Home Value</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const COST_PER_WATT = 2.75; // Average installed cost per watt
+        const PANEL_WATTS = 400; // Modern panel wattage
+        const TAX_CREDIT = 0.30; // 30% federal tax credit
+        const BATTERY_COSTS = { no: 0, basic: 8000, premium: 13000 };
+
+        function calculate() {
+            const bill = parseFloat(document.getElementById('bill').value) || 150;
+            const rate = parseFloat(document.getElementById('rate').value) || 0.13;
+            const sunHours = parseFloat(document.getElementById('sunHours').value);
+            const roof = document.getElementById('roof').value;
+            const offset = parseFloat(document.getElementById('offset').value);
+            const battery = document.getElementById('battery').value;
+
+            // Calculate monthly kWh usage
+            const monthlyKwh = bill / rate;
+            const annualKwh = monthlyKwh * 12;
+
+            // Calculate system size needed
+            // System kW = Annual kWh / (sun hours * 365 * system efficiency ~85%)
+            const systemKw = (annualKwh * offset) / (sunHours * 365 * 0.85);
+            const systemWatts = systemKw * 1000;
+            const numPanels = Math.ceil(systemWatts / PANEL_WATTS);
+
+            // Calculate costs
+            const grossCost = systemWatts * COST_PER_WATT;
+            const batteryCost = BATTERY_COSTS[battery];
+            const totalGross = grossCost + batteryCost;
+            const taxCredit = totalGross * TAX_CREDIT;
+            const netCost = totalGross - taxCredit;
+
+            // Calculate savings
+            const annualSavings = bill * 12 * offset;
+            const monthlySavings = annualSavings / 12;
+            const paybackYears = netCost / annualSavings;
+            const totalSavings = annualSavings * 25 - netCost; // 25-year system life
+
+            document.getElementById('netCost').textContent = '$' + Math.round(netCost).toLocaleString();
+            document.getElementById('systemSize').textContent = systemKw.toFixed(1) + ' kW';
+            document.getElementById('numPanels').textContent = numPanels;
+            document.getElementById('payback').textContent = paybackYears.toFixed(1) + ' yrs';
+
+            document.getElementById('grossCost').textContent = '$' + Math.round(grossCost).toLocaleString();
+            document.getElementById('taxCredit').textContent = '-$' + Math.round(taxCredit).toLocaleString();
+            document.getElementById('batteryCost').textContent = batteryCost > 0 ? '$' + batteryCost.toLocaleString() : '$0';
+            document.getElementById('netCostBreak').innerHTML = '<strong>$' + Math.round(netCost).toLocaleString() + '</strong>';
+
+            document.getElementById('monthlySavings').textContent = '$' + Math.round(monthlySavings);
+            document.getElementById('annualSavings').textContent = '$' + Math.round(annualSavings).toLocaleString();
+            document.getElementById('totalSavings').textContent = '$' + Math.round(totalSavings).toLocaleString();
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

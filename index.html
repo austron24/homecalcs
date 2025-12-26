@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeCalcs - Free Home Improvement Calculators</title>
+    <meta name="description" content="Free home improvement calculators for roofing, flooring, painting, and more. Estimate project costs and materials.">
+    <link rel="canonical" href="https://homecalcs.xyz/">
+    <meta property="og:title" content="HomeCalcs - Free Home Improvement Calculators">
+    <meta property="og:description" content="Free home improvement calculators for roofing, flooring, painting, and more. Estimate project costs and materials.">
+    <meta property="og:url" content="https://homecalcs.xyz/">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #059669;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #059669, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-box {
+            max-width: 500px;
+            margin: 2rem auto;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: #059669;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+        }
+        .tool-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #059669;
+            transform: translateY(-2px);
+        }
+        .tool-icon {
+            font-size: 1.5rem;
+        }
+        .tool-name {
+            font-weight: 500;
+        }
+        .stats {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+        }
+        .ad-banner {
+            text-align: center;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 728px;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748b;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">HomeCalcs</a>
+        <span>310 Free Calculators</span>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-banner">
+        <script async="async" data-cfasync="false" src="https://www.highperformanceformat.com/ee368c7cdf94f06bc71fdf57fe4124b8/invoke.js"></script>
+        <div id="container-ee368c7cdf94f06bc71fdf57fe4124b8"></div>
+    </div>
+
+    <section class="hero">
+        <h1>Free Home Improvement Calculators</h1>
+        <p>Free home improvement calculators for roofing, flooring, painting, and more. Estimate project costs and materials.</p>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search 310 calculators..." onkeyup="filterTools()">
+        </div>
+    </section>
+
+    <div class="stats">
+        <strong>310</strong> free calculators • No signup required • 100% free
+    </div>
+
+    <main class="tools-grid" id="tools-grid">
+        
+            <a href="ac-btu-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ac Btu Calculator</span>
+            </a>
+            <a href="accessibility-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Accessibility Checker</span>
+            </a>
+            <a href="age-difference-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Age Difference Calculator</span>
+            </a>
+            <a href="air-fryer-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Air Fryer Calculator</span>
+            </a>
+            <a href="anova-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Anova Calculator</span>
+            </a>
+            <a href="appliance-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Appliance Cost Calculator</span>
+            </a>
+            <a href="appliance-energy-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Appliance Energy Calculator</span>
+            </a>
+            <a href="appliance-repair-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Appliance Repair Cost Calculator</span>
+            </a>
+            <a href="apr-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Apr Calculator</span>
+            </a>
+            <a href="aquarium-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Aquarium Calculator</span>
+            </a>
+            <a href="aspect-ratio.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Aspect Ratio</span>
+            </a>
+            <a href="asphalt-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Asphalt Calculator</span>
+            </a>
+            <a href="attic-insulation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Attic Insulation Calculator</span>
+            </a>
+            <a href="auto-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Auto Insurance Calculator</span>
+            </a>
+            <a href="auto-lease-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Auto Lease Calculator</span>
+            </a>
+            <a href="badge-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Badge Generator</span>
+            </a>
+            <a href="base64.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Base64</span>
+            </a>
+            <a href="base64-encoder.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Base64 Encoder</span>
+            </a>
+            <a href="basement-finishing-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Basement Finishing Calculator</span>
+            </a>
+            <a href="bathroom-remodel-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bathroom Remodel Calculator</span>
+            </a>
+            <a href="bathroom-remodel-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bathroom Remodel Cost Calculator</span>
+            </a>
+            <a href="bathroom-renovation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bathroom Renovation Cost Calculator</span>
+            </a>
+            <a href="bathroom-tile-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bathroom Tile Calculator</span>
+            </a>
+            <a href="binary-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Binary Converter</span>
+            </a>
+            <a href="binary-text.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Binary Text</span>
+            </a>
+            <a href="border-radius.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Border Radius</span>
+            </a>
+            <a href="box-shadow-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Box Shadow Generator</span>
+            </a>
+            <a href="bread-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Bread Calculator</span>
+            </a>
+            <a href="brick-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Brick Calculator</span>
+            </a>
+            <a href="cabinet-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cabinet Cost Calculator</span>
+            </a>
+            <a href="cabinet-refacing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cabinet Refacing Cost Calculator</span>
+            </a>
+            <a href="car-depreciation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Depreciation Calculator</span>
+            </a>
+            <a href="car-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Insurance Calculator</span>
+            </a>
+            <a href="car-lease-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Lease Calculator</span>
+            </a>
+            <a href="car-maintenance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Maintenance Calculator</span>
+            </a>
+            <a href="car-payment-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Car Payment Calculator</span>
+            </a>
+            <a href="carbon-footprint-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Carbon Footprint Calculator</span>
+            </a>
+            <a href="carpet-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Carpet Calculator</span>
+            </a>
+            <a href="carpet-cleaning-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Carpet Cleaning Calculator</span>
+            </a>
+            <a href="carpet-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Carpet Installation Cost Calculator</span>
+            </a>
+            <a href="case-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Case Converter</span>
+            </a>
+            <a href="cashback-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cashback Calculator</span>
+            </a>
+            <a href="cd-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cd Calculator</span>
+            </a>
+            <a href="character-counter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Character Counter</span>
+            </a>
+            <a href="chi-square-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Chi Square Calculator</span>
+            </a>
+            <a href="childcare-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Childcare Cost Calculator</span>
+            </a>
+            <a href="chimney-cleaning-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Chimney Cleaning Cost Calculator</span>
+            </a>
+            <a href="chimney-draft-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Chimney Draft Calculator</span>
+            </a>
+            <a href="cleaning-service-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cleaning Service Calculator</span>
+            </a>
+            <a href="coin-flip.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Coin Flip</span>
+            </a>
+            <a href="college-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">College Cost Calculator</span>
+            </a>
+            <a href="color-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Color Converter</span>
+            </a>
+            <a href="compare.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Compare</span>
+            </a>
+            <a href="concrete-block-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Block Calculator</span>
+            </a>
+            <a href="concrete-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Calculator</span>
+            </a>
+            <a href="concrete-footing-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Footing Calculator</span>
+            </a>
+            <a href="concrete-patio-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Patio Calculator</span>
+            </a>
+            <a href="concrete-patio-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Patio Cost Calculator</span>
+            </a>
+            <a href="concrete-steps-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Concrete Steps Calculator</span>
+            </a>
+            <a href="confidence-interval-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Confidence Interval Calculator</span>
+            </a>
+            <a href="contrast-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Contrast Checker</span>
+            </a>
+            <a href="cooking-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cooking Converter</span>
+            </a>
+            <a href="correlation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Correlation Calculator</span>
+            </a>
+            <a href="countdown.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Countdown</span>
+            </a>
+            <a href="countdown-timer.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Countdown Timer</span>
+            </a>
+            <a href="countertop-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Countertop Calculator</span>
+            </a>
+            <a href="countertop-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Countertop Cost Calculator</span>
+            </a>
+            <a href="coupon-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Coupon Calculator</span>
+            </a>
+            <a href="credit-score-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Credit Score Calculator</span>
+            </a>
+            <a href="cron-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cron Generator</span>
+            </a>
+            <a href="crypto-profit-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Crypto Profit Calculator</span>
+            </a>
+            <a href="css-minifier.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Css Minifier</span>
+            </a>
+            <a href="css-units.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Css Units</span>
+            </a>
+            <a href="csv-json.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Csv Json</span>
+            </a>
+            <a href="cubic-feet-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Cubic Feet Calculator</span>
+            </a>
+            <a href="currency-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Currency Converter</span>
+            </a>
+            <a href="date-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Date Calculator</span>
+            </a>
+            <a href="daycare-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Daycare Cost Calculator</span>
+            </a>
+            <a href="debt-to-income-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Debt To Income Calculator</span>
+            </a>
+            <a href="deck-building-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Deck Building Cost Calculator</span>
+            </a>
+            <a href="deck-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Deck Calculator</span>
+            </a>
+            <a href="deck-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Deck Cost Calculator</span>
+            </a>
+            <a href="deck-stain-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Deck Stain Calculator</span>
+            </a>
+            <a href="diff-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Diff Checker</span>
+            </a>
+            <a href="discount-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Discount Calculator</span>
+            </a>
+            <a href="diy-vs-hire-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Diy Vs Hire Calculator</span>
+            </a>
+            <a href="dns-lookup.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Dns Lookup</span>
+            </a>
+            <a href="dog-boarding-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Dog Boarding Cost Calculator</span>
+            </a>
+            <a href="door-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Door Installation Cost Calculator</span>
+            </a>
+            <a href="dress-size-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Dress Size Converter</span>
+            </a>
+            <a href="driveway-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Driveway Cost Calculator</span>
+            </a>
+            <a href="driveway-paving-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Driveway Paving Calculator</span>
+            </a>
+            <a href="drywall-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Drywall Calculator</span>
+            </a>
+            <a href="drywall-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Drywall Cost Calculator</span>
+            </a>
+            <a href="duct-size-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Duct Size Calculator</span>
+            </a>
+            <a href="electric-bill-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Electric Bill Calculator</span>
+            </a>
+            <a href="electrician-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Electrician Cost Calculator</span>
+            </a>
+            <a href="electricity-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Electricity Calculator</span>
+            </a>
+            <a href="electricity-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Electricity Cost Calculator</span>
+            </a>
+            <a href="emoji-picker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Emoji Picker</span>
+            </a>
+            <a href="equipment-lease-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Equipment Lease Calculator</span>
+            </a>
+            <a href="ev-charging-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ev Charging Calculator</span>
+            </a>
+            <a href="ev-charging-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ev Charging Cost Calculator</span>
+            </a>
+            <a href="event-countdown-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Event Countdown Calculator</span>
+            </a>
+            <a href="exponential-growth-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Exponential Growth Calculator</span>
+            </a>
+            <a href="fabric-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fabric Calculator</span>
+            </a>
+            <a href="fabric-yardage-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fabric Yardage Calculator</span>
+            </a>
+            <a href="factorial-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Factorial Calculator</span>
+            </a>
+            <a href="favicon-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Favicon Generator</span>
+            </a>
+            <a href="fence-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fence Calculator</span>
+            </a>
+            <a href="fence-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fence Cost Calculator</span>
+            </a>
+            <a href="fence-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fence Installation Cost Calculator</span>
+            </a>
+            <a href="fertilizer-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fertilizer Calculator</span>
+            </a>
+            <a href="final-expense-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Final Expense Insurance Calculator</span>
+            </a>
+            <a href="firewood-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Firewood Calculator</span>
+            </a>
+            <a href="flexbox-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Flexbox Generator</span>
+            </a>
+            <a href="flooring-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Flooring Calculator</span>
+            </a>
+            <a href="flooring-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Flooring Installation Cost Calculator</span>
+            </a>
+            <a href="fraction-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fraction Calculator</span>
+            </a>
+            <a href="franchise-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Franchise Cost Calculator</span>
+            </a>
+            <a href="fuel-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fuel Calculator</span>
+            </a>
+            <a href="fuel-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Fuel Cost Calculator</span>
+            </a>
+            <a href="garage-door-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Garage Door Calculator</span>
+            </a>
+            <a href="garage-door-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Garage Door Cost Calculator</span>
+            </a>
+            <a href="garden-soil-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Garden Soil Calculator</span>
+            </a>
+            <a href="generator-size-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Generator Size Calculator</span>
+            </a>
+            <a href="gpa-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Gpa Calculator</span>
+            </a>
+            <a href="grade-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Grade Calculator</span>
+            </a>
+            <a href="gradient-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Gradient Generator</span>
+            </a>
+            <a href="gravel-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Gravel Calculator</span>
+            </a>
+            <a href="grid-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Grid Generator</span>
+            </a>
+            <a href="gutter-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Gutter Calculator</span>
+            </a>
+            <a href="gutter-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Gutter Installation Cost Calculator</span>
+            </a>
+            <a href="half-birthday-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Half Birthday Calculator</span>
+            </a>
+            <a href="handyman-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Handyman Cost Calculator</span>
+            </a>
+            <a href="hardwood-refinishing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hardwood Refinishing Cost Calculator</span>
+            </a>
+            <a href="hash-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hash Generator</span>
+            </a>
+            <a href="heating-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Heating Cost Calculator</span>
+            </a>
+            <a href="hex-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hex Converter</span>
+            </a>
+            <a href="hex-to-rgb-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hex To Rgb Converter</span>
+            </a>
+            <a href="home-addition-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Addition Calculator</span>
+            </a>
+            <a href="home-addition-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Home Addition Cost Calculator</span>
+            </a>
+            <a href="horse-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Horse Cost Calculator</span>
+            </a>
+            <a href="hot-tub-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hot Tub Cost Calculator</span>
+            </a>
+            <a href="hourly-salary-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hourly Salary Calculator</span>
+            </a>
+            <a href="house-painting-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">House Painting Cost Calculator</span>
+            </a>
+            <a href="htaccess-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Htaccess Generator</span>
+            </a>
+            <a href="html-formatter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Html Formatter</span>
+            </a>
+            <a href="hvac-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hvac Calculator</span>
+            </a>
+            <a href="hvac-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hvac Cost Calculator</span>
+            </a>
+            <a href="hvac-replacement-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hvac Replacement Calculator</span>
+            </a>
+            <a href="hvac-sizing-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Hvac Sizing Calculator</span>
+            </a>
+            <a href="insulation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Insulation Calculator</span>
+            </a>
+            <a href="ip-info.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ip Info</span>
+            </a>
+            <a href="irrigation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Irrigation Calculator</span>
+            </a>
+            <a href="js-minifier.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Js Minifier</span>
+            </a>
+            <a href="json-formatter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Json Formatter</span>
+            </a>
+            <a href="kitchen-cabinet-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Kitchen Cabinet Calculator</span>
+            </a>
+            <a href="kitchen-remodel-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Kitchen Remodel Calculator</span>
+            </a>
+            <a href="land-clearing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Land Clearing Cost Calculator</span>
+            </a>
+            <a href="landscaping-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Landscaping Calculator</span>
+            </a>
+            <a href="landscaping-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Landscaping Cost Calculator</span>
+            </a>
+            <a href="lawn-aeration-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lawn Aeration Calculator</span>
+            </a>
+            <a href="lawn-care-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lawn Care Calculator</span>
+            </a>
+            <a href="lawn-fertilizer-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lawn Fertilizer Calculator</span>
+            </a>
+            <a href="lawn-mowing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lawn Mowing Cost Calculator</span>
+            </a>
+            <a href="lawn-seed-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lawn Seed Calculator</span>
+            </a>
+            <a href="lease-vs-buy-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lease Vs Buy Calculator</span>
+            </a>
+            <a href="life-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Life Insurance Calculator</span>
+            </a>
+            <a href="linear-regression-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Linear Regression Calculator</span>
+            </a>
+            <a href="link-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Link Checker</span>
+            </a>
+            <a href="logarithm-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Logarithm Calculator</span>
+            </a>
+            <a href="long-term-care-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Long Term Care Calculator</span>
+            </a>
+            <a href="lorem-ipsum.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lorem Ipsum</span>
+            </a>
+            <a href="lorem-ipsum-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lorem Ipsum Generator</span>
+            </a>
+            <a href="lottery-odds-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lottery Odds Calculator</span>
+            </a>
+            <a href="lumber-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Lumber Calculator</span>
+            </a>
+            <a href="markdown-preview.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Markdown Preview</span>
+            </a>
+            <a href="medical-bill-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Medical Bill Calculator</span>
+            </a>
+            <a href="medicare-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Medicare Calculator</span>
+            </a>
+            <a href="meta-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Meta Generator</span>
+            </a>
+            <a href="moving-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Moving Cost Calculator</span>
+            </a>
+            <a href="mulch-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mulch Calculator</span>
+            </a>
+            <a href="mulch-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Mulch Cost Calculator</span>
+            </a>
+            <a href="natural-gas-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Natural Gas Calculator</span>
+            </a>
+            <a href="new-roof-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">New Roof Cost Calculator</span>
+            </a>
+            <a href="og-preview.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Og Preview</span>
+            </a>
+            <a href="options-profit-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Options Profit Calculator</span>
+            </a>
+            <a href="paint-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Paint Calculator</span>
+            </a>
+            <a href="painter-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Painter Cost Calculator</span>
+            </a>
+            <a href="palette-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Palette Generator</span>
+            </a>
+            <a href="password-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Password Generator</span>
+            </a>
+            <a href="password-strength.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Password Strength</span>
+            </a>
+            <a href="patio-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Patio Cost Calculator</span>
+            </a>
+            <a href="paver-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Paver Calculator</span>
+            </a>
+            <a href="piano-lesson-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Piano Lesson Cost Calculator</span>
+            </a>
+            <a href="pizza-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pizza Calculator</span>
+            </a>
+            <a href="pizza-dough-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pizza Dough Calculator</span>
+            </a>
+            <a href="plumber-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Plumber Cost Calculator</span>
+            </a>
+            <a href="pomodoro.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pomodoro</span>
+            </a>
+            <a href="pool-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Calculator</span>
+            </a>
+            <a href="pool-chemical-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Chemical Calculator</span>
+            </a>
+            <a href="pool-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Cost Calculator</span>
+            </a>
+            <a href="pool-heating-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Heating Calculator</span>
+            </a>
+            <a href="pool-installation-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Installation Calculator</span>
+            </a>
+            <a href="pool-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Installation Cost Calculator</span>
+            </a>
+            <a href="pool-volume-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pool Volume Calculator</span>
+            </a>
+            <a href="pressure-washing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Pressure Washing Cost Calculator</span>
+            </a>
+            <a href="price-per-square-foot-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Price Per Square Foot Calculator</span>
+            </a>
+            <a href="privacy-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Privacy Generator</span>
+            </a>
+            <a href="private-school-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Private School Cost Calculator</span>
+            </a>
+            <a href="probability-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Probability Calculator</span>
+            </a>
+            <a href="propane-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Propane Calculator</span>
+            </a>
+            <a href="puppy-food-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Puppy Food Calculator</span>
+            </a>
+            <a href="qr-code-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Qr Code Generator</span>
+            </a>
+            <a href="qr-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Qr Generator</span>
+            </a>
+            <a href="random-name.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Random Name</span>
+            </a>
+            <a href="random-number.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Random Number</span>
+            </a>
+            <a href="random-number-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Random Number Generator</span>
+            </a>
+            <a href="ratio-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ratio Calculator</span>
+            </a>
+            <a href="reading-time.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Reading Time</span>
+            </a>
+            <a href="rebar-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Rebar Calculator</span>
+            </a>
+            <a href="recipe-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Recipe Converter</span>
+            </a>
+            <a href="recipe-scaler-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Recipe Scaler Calculator</span>
+            </a>
+            <a href="redirect-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Redirect Checker</span>
+            </a>
+            <a href="regex-tester.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Regex Tester</span>
+            </a>
+            <a href="retaining-wall-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Retaining Wall Calculator</span>
+            </a>
+            <a href="ring-size-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Ring Size Calculator</span>
+            </a>
+            <a href="road-trip-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Road Trip Calculator</span>
+            </a>
+            <a href="road-trip-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Road Trip Cost Calculator</span>
+            </a>
+            <a href="robots-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Robots Generator</span>
+            </a>
+            <a href="robots-tester.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Robots Tester</span>
+            </a>
+            <a href="roman-numeral.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Roman Numeral</span>
+            </a>
+            <a href="roof-replacement-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Roof Replacement Calculator</span>
+            </a>
+            <a href="roofing-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Roofing Calculator</span>
+            </a>
+            <a href="sample-size-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sample Size Calculator</span>
+            </a>
+            <a href="sat-score-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sat Score Calculator</span>
+            </a>
+            <a href="schema-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Schema Generator</span>
+            </a>
+            <a href="scholarship-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Scholarship Calculator</span>
+            </a>
+            <a href="scientific-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Scientific Calculator</span>
+            </a>
+            <a href="screen-size-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Screen Size Calculator</span>
+            </a>
+            <a href="selling-price-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Selling Price Calculator</span>
+            </a>
+            <a href="seo-checker.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Seo Checker</span>
+            </a>
+            <a href="septic-system-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Septic System Cost Calculator</span>
+            </a>
+            <a href="septic-tank-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Septic Tank Calculator</span>
+            </a>
+            <a href="shed-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Shed Calculator</span>
+            </a>
+            <a href="shoe-size-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Shoe Size Converter</span>
+            </a>
+            <a href="shower-tile-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Shower Tile Calculator</span>
+            </a>
+            <a href="siding-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Siding Calculator</span>
+            </a>
+            <a href="siding-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Siding Cost Calculator</span>
+            </a>
+            <a href="sitemap-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sitemap Generator</span>
+            </a>
+            <a href="slug-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Slug Generator</span>
+            </a>
+            <a href="snow-plowing-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Snow Plowing Cost Calculator</span>
+            </a>
+            <a href="snow-removal-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Snow Removal Calculator</span>
+            </a>
+            <a href="sod-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sod Calculator</span>
+            </a>
+            <a href="soil-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Soil Calculator</span>
+            </a>
+            <a href="solar-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Solar Calculator</span>
+            </a>
+            <a href="solar-panel-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Solar Panel Calculator</span>
+            </a>
+            <a href="solar-panel-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Solar Panel Cost Calculator</span>
+            </a>
+            <a href="speed-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Speed Calculator</span>
+            </a>
+            <a href="sprinkler-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sprinkler Calculator</span>
+            </a>
+            <a href="sql-formatter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Sql Formatter</span>
+            </a>
+            <a href="stair-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Stair Calculator</span>
+            </a>
+            <a href="standard-error-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Standard Error Calculator</span>
+            </a>
+            <a href="statistics-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Statistics Calculator</span>
+            </a>
+            <a href="stopwatch.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Stopwatch</span>
+            </a>
+            <a href="storage-unit-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Storage Unit Calculator</span>
+            </a>
+            <a href="subnet-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Subnet Calculator</span>
+            </a>
+            <a href="t-test-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">T Test Calculator</span>
+            </a>
+            <a href="temperature-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Temperature Converter</span>
+            </a>
+            <a href="term-life-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Term Life Insurance Calculator</span>
+            </a>
+            <a href="terms-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Terms Generator</span>
+            </a>
+            <a href="text-case-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Text Case Converter</span>
+            </a>
+            <a href="text-shadow.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Text Shadow</span>
+            </a>
+            <a href="tile-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tile Calculator</span>
+            </a>
+            <a href="time-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Time Calculator</span>
+            </a>
+            <a href="time-card-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Time Card Calculator</span>
+            </a>
+            <a href="time-zone-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Time Zone Converter</span>
+            </a>
+            <a href="time-zone-meeting-planner.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Time Zone Meeting Planner</span>
+            </a>
+            <a href="timestamp-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Timestamp Converter</span>
+            </a>
+            <a href="timezone-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Timezone Converter</span>
+            </a>
+            <a href="tip-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tip Calculator</span>
+            </a>
+            <a href="tip-out-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tip Out Calculator</span>
+            </a>
+            <a href="tip-split-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tip Split Calculator</span>
+            </a>
+            <a href="topsoil-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Topsoil Calculator</span>
+            </a>
+            <a href="total-car-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Total Car Cost Calculator</span>
+            </a>
+            <a href="tree-removal-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tree Removal Calculator</span>
+            </a>
+            <a href="tree-removal-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tree Removal Cost Calculator</span>
+            </a>
+            <a href="tutoring-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Tutoring Cost Calculator</span>
+            </a>
+            <a href="typing-test.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Typing Test</span>
+            </a>
+            <a href="umbrella-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Umbrella Insurance Calculator</span>
+            </a>
+            <a href="unit-converter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Unit Converter</span>
+            </a>
+            <a href="unit-price-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Unit Price Calculator</span>
+            </a>
+            <a href="url-encoder.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Url Encoder</span>
+            </a>
+            <a href="uuid-generator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Uuid Generator</span>
+            </a>
+            <a href="viewport-resizer.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Viewport Resizer</span>
+            </a>
+            <a href="wallpaper-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Wallpaper Calculator</span>
+            </a>
+            <a href="water-bill-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Water Bill Calculator</span>
+            </a>
+            <a href="water-heater-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Water Heater Calculator</span>
+            </a>
+            <a href="wedding-cake-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Wedding Cake Calculator</span>
+            </a>
+            <a href="wedding-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Wedding Cost Calculator</span>
+            </a>
+            <a href="weeks-between-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Weeks Between Calculator</span>
+            </a>
+            <a href="well-drilling-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Well Drilling Cost Calculator</span>
+            </a>
+            <a href="whole-life-insurance-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Whole Life Insurance Calculator</span>
+            </a>
+            <a href="window-installation-cost-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Window Installation Cost Calculator</span>
+            </a>
+            <a href="window-replacement-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Window Replacement Calculator</span>
+            </a>
+            <a href="wire-gauge-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Wire Gauge Calculator</span>
+            </a>
+            <a href="word-counter.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Word Counter</span>
+            </a>
+            <a href="yarn-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Yarn Calculator</span>
+            </a>
+            <a href="z-score-calculator.html" class="tool-card">
+                <span class="tool-icon">📊</span>
+                <span class="tool-name">Z Score Calculator</span>
+            </a>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-banner">
+        <script async="async" data-cfasync="false" src="https://www.highperformanceformat.com/b43e7cf5057864a264961884e1f34530/invoke.js"></script>
+        <div id="container-b43e7cf5057864a264961884e1f34530"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 HomeCalcs. All calculators are free to use.</p>
+    </footer>
+
+    <script>
+        function filterTools() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+            cards.forEach(card => {
+                const name = card.querySelector('.tool-name').textContent.toLowerCase();
+                card.style.display = name.includes(search) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

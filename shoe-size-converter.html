@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Size Converter - US UK EU Size Chart | HomeCalcs</title>
+    <meta name="description" content="Free shoe size converter. Convert between US, UK, EU shoe sizes for men, women, and kids.">
+    <meta name="keywords" content="shoe size converter, shoe size chart, US to EU shoe size, shoe size calculator">
+    <link rel="canonical" href="https://homecalcs.xyz/shoe-size-converter.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .tab-buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab-btn { flex: 1; padding: 15px; background: var(--bg-input); border: 2px solid var(--border); border-radius: 10px; cursor: pointer; text-align: center; font-weight: 700; transition: all 0.3s; }
+        .tab-btn:hover { border-color: var(--primary); }
+        .tab-btn.active { border-color: var(--primary); background: rgba(99, 102, 241, 0.2); color: var(--primary); }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.8rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.9rem; }
+        .size-chart { margin-top: 20px; max-height: 350px; overflow-y: auto; }
+        .chart-row { display: grid; grid-template-columns: repeat(5, 1fr); padding: 12px; border-bottom: 1px solid var(--border); text-align: center; }
+        .chart-row.header { background: var(--primary); font-weight: 700; position: sticky; top: 0; }
+        .chart-row.highlight { background: rgba(99, 102, 241, 0.2); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid, .tab-buttons { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>👟 Shoe Size Converter</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>👤 Select Category</h2>
+                <div class="tab-buttons">
+                    <div class="tab-btn active" onclick="setCategory('men')">👨 Men</div>
+                    <div class="tab-btn" onclick="setCategory('women')">👩 Women</div>
+                    <div class="tab-btn" onclick="setCategory('kids')">👶 Kids</div>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Size System</label>
+                        <select id="sizeSystem" onchange="convert()">
+                            <option value="us">US Size</option>
+                            <option value="uk">UK Size</option>
+                            <option value="eu">EU Size</option>
+                            <option value="cm">Foot Length (cm)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Size</label>
+                        <input type="number" id="sizeValue" value="10" step="0.5" oninput="convert()">
+                    </div>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="usSize">10</div>
+                        <div class="result-label">US Size</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="ukSize">9.5</div>
+                        <div class="result-label">UK Size</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="euSize">44</div>
+                        <div class="result-label">EU Size</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="cmSize">28</div>
+                        <div class="result-label">cm</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Size Chart</h2>
+                <div class="size-chart">
+                    <div class="chart-row header">
+                        <span>US</span>
+                        <span>UK</span>
+                        <span>EU</span>
+                        <span>cm</span>
+                        <span>inches</span>
+                    </div>
+                    <div id="sizeChart"></div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="ring-size-calculator.html" class="related-link">💍 Ring Size Calculator</a>
+                    <a href="unit-converter.html" class="related-link">📐 Unit Converter</a>
+                    <a href="bmi-calculator.html" class="related-link">⚖️ BMI Calculator</a>
+                    <a href="height-converter.html" class="related-link">📏 Height Converter</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let category = 'men';
+        
+        const sizeData = {
+            men: [
+                { us: 6, uk: 5.5, eu: 39, cm: 24 },
+                { us: 6.5, uk: 6, eu: 39.5, cm: 24.5 },
+                { us: 7, uk: 6.5, eu: 40, cm: 25 },
+                { us: 7.5, uk: 7, eu: 40.5, cm: 25.5 },
+                { us: 8, uk: 7.5, eu: 41, cm: 26 },
+                { us: 8.5, uk: 8, eu: 42, cm: 26.5 },
+                { us: 9, uk: 8.5, eu: 42.5, cm: 27 },
+                { us: 9.5, uk: 9, eu: 43, cm: 27.5 },
+                { us: 10, uk: 9.5, eu: 44, cm: 28 },
+                { us: 10.5, uk: 10, eu: 44.5, cm: 28.5 },
+                { us: 11, uk: 10.5, eu: 45, cm: 29 },
+                { us: 11.5, uk: 11, eu: 45.5, cm: 29.5 },
+                { us: 12, uk: 11.5, eu: 46, cm: 30 },
+                { us: 13, uk: 12.5, eu: 47, cm: 31 }
+            ],
+            women: [
+                { us: 5, uk: 2.5, eu: 35, cm: 22 },
+                { us: 5.5, uk: 3, eu: 35.5, cm: 22.5 },
+                { us: 6, uk: 3.5, eu: 36, cm: 23 },
+                { us: 6.5, uk: 4, eu: 37, cm: 23.5 },
+                { us: 7, uk: 4.5, eu: 37.5, cm: 24 },
+                { us: 7.5, uk: 5, eu: 38, cm: 24.5 },
+                { us: 8, uk: 5.5, eu: 38.5, cm: 25 },
+                { us: 8.5, uk: 6, eu: 39, cm: 25.5 },
+                { us: 9, uk: 6.5, eu: 40, cm: 26 },
+                { us: 9.5, uk: 7, eu: 40.5, cm: 26.5 },
+                { us: 10, uk: 7.5, eu: 41, cm: 27 },
+                { us: 11, uk: 8.5, eu: 42, cm: 28 }
+            ],
+            kids: [
+                { us: 1, uk: 0.5, eu: 16, cm: 9.5 },
+                { us: 2, uk: 1, eu: 17, cm: 10.5 },
+                { us: 3, uk: 2, eu: 18, cm: 11 },
+                { us: 4, uk: 3, eu: 19, cm: 12 },
+                { us: 5, uk: 4, eu: 20, cm: 12.5 },
+                { us: 6, uk: 5, eu: 22, cm: 14 },
+                { us: 7, uk: 6, eu: 23, cm: 15 },
+                { us: 8, uk: 7, eu: 24, cm: 16 },
+                { us: 9, uk: 8, eu: 25, cm: 16.5 },
+                { us: 10, uk: 9, eu: 27, cm: 17.5 },
+                { us: 11, uk: 10, eu: 28, cm: 18.5 },
+                { us: 12, uk: 11, eu: 30, cm: 19.5 },
+                { us: 13, uk: 12, eu: 31, cm: 20 }
+            ]
+        };
+        
+        function setCategory(cat) {
+            category = cat;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            convert();
+        }
+        
+        function convert() {
+            const system = document.getElementById('sizeSystem').value;
+            const value = parseFloat(document.getElementById('sizeValue').value) || 0;
+            const sizes = sizeData[category];
+            
+            // Find closest match
+            let closest = sizes[0];
+            let minDiff = Infinity;
+            
+            sizes.forEach(s => {
+                let diff;
+                if (system === 'us') diff = Math.abs(s.us - value);
+                else if (system === 'uk') diff = Math.abs(s.uk - value);
+                else if (system === 'eu') diff = Math.abs(s.eu - value);
+                else diff = Math.abs(s.cm - value);
+                
+                if (diff < minDiff) { minDiff = diff; closest = s; }
+            });
+            
+            document.getElementById('usSize').textContent = closest.us;
+            document.getElementById('ukSize').textContent = closest.uk;
+            document.getElementById('euSize').textContent = closest.eu;
+            document.getElementById('cmSize').textContent = closest.cm;
+            
+            // Build chart
+            let chartHtml = '';
+            sizes.forEach(s => {
+                const highlight = s.us === closest.us ? 'highlight' : '';
+                const inches = (s.cm / 2.54).toFixed(1);
+                chartHtml += `<div class="chart-row ${highlight}">
+                    <span>${s.us}</span>
+                    <span>${s.uk}</span>
+                    <span>${s.eu}</span>
+                    <span>${s.cm}</span>
+                    <span>${inches}"</span>
+                </div>`;
+            });
+            document.getElementById('sizeChart').innerHTML = chartHtml;
+        }
+        
+        convert();
+    </script>
+</body>
+</html>

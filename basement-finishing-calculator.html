@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basement Finishing Calculator - Cost to Finish Basement | HomeCalcs</title>
+    <meta name="description" content="Free basement finishing calculator. Estimate costs to finish your basement including framing, drywall, flooring, and electrical.">
+    <meta name="keywords" content="basement finishing calculator, basement remodel cost, finish basement, basement renovation, basement cost">
+    <link rel="canonical" href="https://homecalcs.xyz/basement-finishing-calculator.html">
+    <style>
+        :root { --primary: #8b5cf6; --primary-dark: #7c3aed; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .checkbox-item { display: flex; align-items: center; background: var(--bg-input); padding: 10px 15px; border-radius: 8px; cursor: pointer; }
+        .checkbox-item input { width: auto; margin-right: 10px; }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .breakdown-row:last-child { border-bottom: none; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🏠 Basement Finishing Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Basement Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Basement Square Footage</label>
+                        <input type="number" id="sqft" value="800" min="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Ceiling Height (ft)</label>
+                        <select id="height" onchange="calculate()">
+                            <option value="7">7 ft (standard)</option>
+                            <option value="8" selected>8 ft</option>
+                            <option value="9">9 ft</option>
+                            <option value="10">10 ft+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Finish Level</label>
+                        <select id="level" onchange="calculate()">
+                            <option value="basic">Basic (DIY-friendly)</option>
+                            <option value="standard" selected>Standard</option>
+                            <option value="premium">Premium</option>
+                            <option value="luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Rooms</label>
+                        <select id="rooms" onchange="calculate()">
+                            <option value="1">1 Open Space</option>
+                            <option value="2" selected>2 Rooms</option>
+                            <option value="3">3 Rooms</option>
+                            <option value="4">4+ Rooms</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <h2 style="margin-top: 20px;">✅ Features to Add</h2>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" id="bathroom" onchange="calculate()"> Full Bathroom</label>
+                    <label class="checkbox-item"><input type="checkbox" id="halfBath" checked onchange="calculate()"> Half Bath</label>
+                    <label class="checkbox-item"><input type="checkbox" id="bar" onchange="calculate()"> Wet Bar/Kitchenette</label>
+                    <label class="checkbox-item"><input type="checkbox" id="egress" onchange="calculate()"> Egress Window</label>
+                    <label class="checkbox-item"><input type="checkbox" id="fireplace" onchange="calculate()"> Gas Fireplace</label>
+                    <label class="checkbox-item"><input type="checkbox" id="theater" onchange="calculate()"> Home Theater</label>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Estimated Total Cost</div>
+                <div class="result-hero-value" id="totalCost">$0 - $0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="perSqFt">$0</div>
+                    <div class="result-label">Per Square Foot</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="addedValue">$0</div>
+                    <div class="result-label">Est. Home Value Added</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="roi">0%</div>
+                    <div class="result-label">ROI at Resale</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Cost Breakdown</h2>
+                <div class="breakdown-row"><span>Framing & Walls</span><span id="framingCost">$0</span></div>
+                <div class="breakdown-row"><span>Drywall & Finish</span><span id="drywallCost">$0</span></div>
+                <div class="breakdown-row"><span>Flooring</span><span id="flooringCost">$0</span></div>
+                <div class="breakdown-row"><span>Electrical & Lighting</span><span id="electricalCost">$0</span></div>
+                <div class="breakdown-row"><span>HVAC Extension</span><span id="hvacCost">$0</span></div>
+                <div class="breakdown-row"><span>Plumbing</span><span id="plumbingCost">$0</span></div>
+                <div class="breakdown-row"><span>Features & Upgrades</span><span id="featuresCost">$0</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="home-renovation-calculator.html" class="related-link">🔨 Renovation</a>
+                    <a href="drywall-calculator.html" class="related-link">🧱 Drywall</a>
+                    <a href="flooring-calculator.html" class="related-link">🏠 Flooring</a>
+                    <a href="hvac-calculator.html" class="related-link">❄️ HVAC</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const levels = {
+            basic: { framing: 4, drywall: 3, flooring: 3, electrical: 5, hvac: 3 },
+            standard: { framing: 6, drywall: 5, flooring: 6, electrical: 8, hvac: 5 },
+            premium: { framing: 8, drywall: 7, flooring: 10, electrical: 12, hvac: 7 },
+            luxury: { framing: 10, drywall: 10, flooring: 15, electrical: 15, hvac: 10 }
+        };
+
+        function calculate() {
+            const sqft = parseFloat(document.getElementById('sqft').value) || 800;
+            const height = parseInt(document.getElementById('height').value);
+            const level = document.getElementById('level').value;
+            const rooms = parseInt(document.getElementById('rooms').value);
+            const lvl = levels[level];
+
+            const heightMult = height >= 9 ? 1.1 : 1;
+            const roomMult = 1 + (rooms - 1) * 0.1;
+
+            const framing = sqft * lvl.framing * roomMult;
+            const drywall = sqft * lvl.drywall * heightMult;
+            const flooring = sqft * lvl.flooring;
+            const electrical = sqft * lvl.electrical;
+            const hvac = sqft * lvl.hvac;
+
+            let features = 0;
+            let plumbing = 0;
+            if (document.getElementById('bathroom').checked) { plumbing += 8000; features += 4000; }
+            if (document.getElementById('halfBath').checked) { plumbing += 3000; features += 1500; }
+            if (document.getElementById('bar').checked) { plumbing += 2000; features += 5000; }
+            if (document.getElementById('egress').checked) features += 3500;
+            if (document.getElementById('fireplace').checked) features += 4000;
+            if (document.getElementById('theater').checked) features += 6000;
+
+            const totalBase = framing + drywall + flooring + electrical + hvac + plumbing + features;
+            const totalLow = Math.round(totalBase * 0.85);
+            const totalHigh = Math.round(totalBase * 1.2);
+            const perSqFt = sqft > 0 ? Math.round((totalLow + totalHigh) / 2 / sqft) : 0;
+            const avgCost = (totalLow + totalHigh) / 2;
+            const addedValue = Math.round(avgCost * 0.7);
+            const roi = avgCost > 0 ? Math.round((addedValue / avgCost) * 100) : 0;
+
+            document.getElementById('totalCost').textContent = '$' + totalLow.toLocaleString() + ' - $' + totalHigh.toLocaleString();
+            document.getElementById('perSqFt').textContent = '$' + perSqFt;
+            document.getElementById('addedValue').textContent = '$' + addedValue.toLocaleString();
+            document.getElementById('roi').textContent = roi + '%';
+
+            document.getElementById('framingCost').textContent = '$' + Math.round(framing).toLocaleString();
+            document.getElementById('drywallCost').textContent = '$' + Math.round(drywall).toLocaleString();
+            document.getElementById('flooringCost').textContent = '$' + Math.round(flooring).toLocaleString();
+            document.getElementById('electricalCost').textContent = '$' + Math.round(electrical).toLocaleString();
+            document.getElementById('hvacCost').textContent = '$' + Math.round(hvac).toLocaleString();
+            document.getElementById('plumbingCost').textContent = '$' + Math.round(plumbing).toLocaleString();
+            document.getElementById('featuresCost').textContent = '$' + Math.round(features).toLocaleString();
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

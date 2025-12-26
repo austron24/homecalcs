@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retaining Wall Calculator - Blocks & Materials | HomeCalcs</title>
+    <meta name="description" content="Free retaining wall calculator. Calculate blocks, gravel, and materials needed for your retaining wall project.">
+    <meta name="keywords" content="retaining wall calculator, retaining wall blocks, landscape blocks, wall materials">
+    <link rel="canonical" href="https://homecalcs.xyz/retaining-wall-calculator.html">
+    <style>
+        :root { --primary: #78716c; --primary-dark: #57534e; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .materials-list { margin-top: 20px; }
+        .material-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>🧱 Retaining Wall Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Wall Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Wall Length (ft)</label>
+                        <input type="number" id="length" value="30" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Wall Height (ft)</label>
+                        <input type="number" id="height" value="3" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Block Type</label>
+                        <select id="blockType" onchange="calculate()">
+                            <option value="standard" selected>Standard Block (12"x4")</option>
+                            <option value="large">Large Block (18"x6")</option>
+                            <option value="natural">Natural Stone (varies)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cap Blocks?</label>
+                        <select id="capBlocks" onchange="calculate()">
+                            <option value="yes" selected>Yes - Add Cap Row</option>
+                            <option value="no">No Caps</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="result-hero">
+                    <div class="result-hero-label">Total Blocks Needed</div>
+                    <div class="result-hero-value" id="totalBlocks">0</div>
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="wallSqFt">0</div>
+                        <div class="result-label">Wall Face Sq Ft</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="courses">0</div>
+                        <div class="result-label">Courses (rows)</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="blocksPerRow">0</div>
+                        <div class="result-label">Blocks per Row</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="capCount">0</div>
+                        <div class="result-label">Cap Blocks</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🧰 Materials List</h2>
+                <div class="materials-list">
+                    <div class="material-row">
+                        <span>Wall Blocks</span>
+                        <span id="wallBlocks">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Cap Blocks</span>
+                        <span id="caps">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Gravel Base (tons)</span>
+                        <span id="gravel">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Drainage Gravel (tons)</span>
+                        <span id="drainage">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Landscape Fabric (sq ft)</span>
+                        <span id="fabric">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Drain Pipe (ft)</span>
+                        <span id="drainPipe">0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Construction Adhesive (tubes)</span>
+                        <span id="adhesive">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Cost Estimate</h2>
+                <div class="form-group">
+                    <label>Block Cost (each)</label>
+                    <input type="number" id="blockCost" value="3.50" step="0.1" oninput="calculate()">
+                </div>
+                <div class="materials-list">
+                    <div class="material-row">
+                        <span>Wall Blocks</span>
+                        <span id="blockTotal">$0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Gravel & Drainage</span>
+                        <span id="gravelTotal">$0</span>
+                    </div>
+                    <div class="material-row">
+                        <span>Fabric & Pipe</span>
+                        <span id="fabricTotal">$0</span>
+                    </div>
+                    <div class="material-row" style="background: var(--success); color: white; font-weight: 700;">
+                        <span>Total Estimated Cost</span>
+                        <span id="totalCost">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="paver-calculator.html" class="related-link">🧱 Paver Calculator</a>
+                    <a href="gravel-calculator.html" class="related-link">🪨 Gravel Calculator</a>
+                    <a href="fence-calculator.html" class="related-link">🏗️ Fence Calculator</a>
+                    <a href="concrete-calculator.html" class="related-link">🧱 Concrete Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const height = parseFloat(document.getElementById('height').value) || 0;
+            const blockType = document.getElementById('blockType').value;
+            const addCaps = document.getElementById('capBlocks').value === 'yes';
+            const blockCost = parseFloat(document.getElementById('blockCost').value) || 0;
+            
+            let blockWidth, blockHeight;
+            if (blockType === 'standard') { blockWidth = 12; blockHeight = 4; }
+            else if (blockType === 'large') { blockWidth = 18; blockHeight = 6; }
+            else { blockWidth = 12; blockHeight = 6; }
+            
+            const wallSqFt = length * height;
+            const courses = Math.ceil((height * 12) / blockHeight);
+            const blocksPerRow = Math.ceil((length * 12) / blockWidth);
+            const wallBlocks = courses * blocksPerRow;
+            const capCount = addCaps ? blocksPerRow : 0;
+            const totalBlocks = wallBlocks + capCount;
+            
+            const gravelBase = (length * 1.5 * 0.5) / 27 * 1.4;
+            const drainageGravel = (length * 1 * height) / 27 * 1.4;
+            const fabric = length * (height + 2) * 2;
+            const drainPipe = length;
+            const adhesive = Math.ceil(totalBlocks / 25);
+            
+            document.getElementById('wallSqFt').textContent = Math.round(wallSqFt);
+            document.getElementById('courses').textContent = courses;
+            document.getElementById('blocksPerRow').textContent = blocksPerRow;
+            document.getElementById('capCount').textContent = capCount;
+            document.getElementById('totalBlocks').textContent = totalBlocks.toLocaleString();
+            
+            document.getElementById('wallBlocks').textContent = wallBlocks;
+            document.getElementById('caps').textContent = capCount;
+            document.getElementById('gravel').textContent = gravelBase.toFixed(1);
+            document.getElementById('drainage').textContent = drainageGravel.toFixed(1);
+            document.getElementById('fabric').textContent = Math.round(fabric);
+            document.getElementById('drainPipe').textContent = Math.round(drainPipe);
+            document.getElementById('adhesive').textContent = adhesive;
+            
+            const blockTotal = totalBlocks * blockCost;
+            const gravelTotal = (gravelBase + drainageGravel) * 50;
+            const fabricTotal = (fabric * 0.15) + (drainPipe * 1.5) + (adhesive * 8);
+            const totalCostVal = blockTotal + gravelTotal + fabricTotal;
+            
+            document.getElementById('blockTotal').textContent = '$' + Math.round(blockTotal).toLocaleString();
+            document.getElementById('gravelTotal').textContent = '$' + Math.round(gravelTotal).toLocaleString();
+            document.getElementById('fabricTotal').textContent = '$' + Math.round(fabricTotal).toLocaleString();
+            document.getElementById('totalCost').textContent = '$' + Math.round(totalCostVal).toLocaleString();
+        }
+        
+        calculate();
+    </script>
+</body>
+</html>

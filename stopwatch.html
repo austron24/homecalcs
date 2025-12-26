@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Stopwatch - Free Timer with Lap Times | HomeCalcs</title>
+    <meta name="description" content="Free online stopwatch with lap timer. Accurate timing with milliseconds. Track lap times and splits.">
+    <meta name="keywords" content="stopwatch, timer, lap timer, online stopwatch, sports timer">
+    <link rel="canonical" href="https://homecalcs.xyz/stopwatch.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; --error: #ef4444; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .stopwatch-display { text-align: center; padding: 50px 20px; background: var(--bg-input); border-radius: 16px; margin-bottom: 20px; }
+        .time-display { font-size: 5rem; font-weight: 800; font-family: 'Monaco', 'Menlo', monospace; color: var(--secondary); }
+        .time-display .ms { font-size: 3rem; color: var(--accent); }
+        .controls { display: flex; gap: 15px; justify-content: center; margin-bottom: 20px; }
+        .control-btn { padding: 18px 40px; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .control-btn.start { background: var(--success); color: white; }
+        .control-btn.stop { background: var(--error); color: white; }
+        .control-btn.lap { background: var(--accent); color: white; }
+        .control-btn.reset { background: var(--bg-input); color: var(--text-primary); border: 2px solid var(--border); }
+        .control-btn:hover { transform: translateY(-2px); }
+        .lap-times { max-height: 300px; overflow-y: auto; }
+        .lap-item { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; font-family: monospace; }
+        .lap-number { color: var(--text-secondary); }
+        .lap-time { color: var(--secondary); font-weight: 600; }
+        .lap-split { color: var(--accent); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .header h1 { font-size: 1.8rem; } .time-display { font-size: 3rem; } .time-display .ms { font-size: 1.8rem; } .control-btn { padding: 15px 25px; font-size: 1rem; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>⏱️ Online Stopwatch</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <div class="stopwatch-display">
+                    <div class="time-display">
+                        <span id="minutes">00</span>:<span id="seconds">00</span>.<span class="ms" id="milliseconds">00</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="control-btn start" id="startBtn" onclick="startStop()">▶ Start</button>
+                    <button class="control-btn lap" onclick="lap()">🏁 Lap</button>
+                    <button class="control-btn reset" onclick="reset()">↺ Reset</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🏁 Lap Times</h2>
+                <div class="lap-times" id="lapTimes">
+                    <p style="color: var(--text-secondary); text-align: center;">Lap times will appear here</p>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="countdown-timer.html" class="related-link">⏳ Countdown Timer</a>
+                    <a href="pomodoro-timer.html" class="related-link">🍅 Pomodoro Timer</a>
+                    <a href="alarm-clock.html" class="related-link">⏰ Alarm Clock</a>
+                    <a href="world-clock.html" class="related-link">🌍 World Clock</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let running = false;
+        let startTime = 0;
+        let elapsed = 0;
+        let interval = null;
+        let laps = [];
+        let lastLapTime = 0;
+        
+        function startStop() {
+            const btn = document.getElementById('startBtn');
+            if (running) {
+                running = false;
+                clearInterval(interval);
+                btn.textContent = '▶ Start';
+                btn.classList.remove('stop');
+                btn.classList.add('start');
+            } else {
+                running = true;
+                startTime = Date.now() - elapsed;
+                interval = setInterval(update, 10);
+                btn.textContent = '⏸ Stop';
+                btn.classList.remove('start');
+                btn.classList.add('stop');
+            }
+        }
+        
+        function update() {
+            elapsed = Date.now() - startTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            const ms = Math.floor((elapsed % 1000) / 10);
+            
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            document.getElementById('milliseconds').textContent = String(ms).padStart(2, '0');
+        }
+        
+        function formatTime(ms) {
+            const minutes = Math.floor(ms / 60000);
+            const seconds = Math.floor((ms % 60000) / 1000);
+            const milliseconds = Math.floor((ms % 1000) / 10);
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(2, '0')}`;
+        }
+        
+        function lap() {
+            if (!running && elapsed === 0) return;
+            
+            const lapTime = elapsed;
+            const split = lapTime - lastLapTime;
+            lastLapTime = lapTime;
+            laps.unshift({ total: lapTime, split: split });
+            
+            const container = document.getElementById('lapTimes');
+            container.innerHTML = laps.map((l, i) => `
+                <div class="lap-item">
+                    <span class="lap-number">Lap ${laps.length - i}</span>
+                    <span class="lap-split">+${formatTime(l.split)}</span>
+                    <span class="lap-time">${formatTime(l.total)}</span>
+                </div>
+            `).join('');
+        }
+        
+        function reset() {
+            running = false;
+            clearInterval(interval);
+            elapsed = 0;
+            laps = [];
+            lastLapTime = 0;
+            
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+            document.getElementById('milliseconds').textContent = '00';
+            document.getElementById('lapTimes').innerHTML = '<p style="color: var(--text-secondary); text-align: center;">Lap times will appear here</p>';
+            
+            const btn = document.getElementById('startBtn');
+            btn.textContent = '▶ Start';
+            btn.classList.remove('stop');
+            btn.classList.add('start');
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') { e.preventDefault(); startStop(); }
+            if (e.code === 'KeyL') lap();
+            if (e.code === 'KeyR') reset();
+        });
+    </script>
+</body>
+</html>

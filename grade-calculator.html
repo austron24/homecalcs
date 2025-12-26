@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator - Calculate Your Class Grade | HomeCalcs</title>
+    <meta name="description" content="Free grade calculator. Calculate your weighted class grade from assignments, tests, and exams. See what you need on your final.">
+    <meta name="keywords" content="grade calculator, weighted grade, final grade calculator, class grade, test grade">
+    <link rel="canonical" href="https://homecalcs.xyz/grade-calculator.html">
+    <style>
+        :root { --primary: #ec4899; --primary-dark: #db2777; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .category-card { background: var(--bg-input); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+        .category-header { display: grid; grid-template-columns: 2fr 1fr 50px; gap: 10px; align-items: end; margin-bottom: 10px; }
+        .form-group { margin-bottom: 0; }
+        .form-group label { display: block; margin-bottom: 5px; color: var(--text-secondary); font-size: 0.85rem; }
+        input { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; background: var(--bg-card); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .btn { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+        .btn-add { background: var(--success); color: white; margin-top: 10px; }
+        .btn-remove { background: var(--accent); color: white; padding: 12px 15px; }
+        .btn-sm { padding: 8px 12px; font-size: 0.9rem; }
+        .grade-row { display: grid; grid-template-columns: 1fr 1fr 40px; gap: 10px; margin-top: 10px; align-items: end; }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .final-calc { background: var(--bg-input); padding: 20px; border-radius: 12px; margin-top: 20px; }
+        .final-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .results-grid, .final-grid, .category-header, .grade-row { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>📊 Grade Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📝 Grade Categories</h2>
+                <div id="categoriesContainer">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="category-name" value="Homework" oninput="calculate()">
+                            </div>
+                            <div class="form-group">
+                                <label>Weight (%)</label>
+                                <input type="number" class="category-weight" value="20" step="5" oninput="calculate()">
+                            </div>
+                            <button class="btn btn-remove" onclick="removeCategory(this)">✕</button>
+                        </div>
+                        <div class="grades-container">
+                            <div class="grade-row">
+                                <div class="form-group">
+                                    <label>Score</label>
+                                    <input type="number" class="score" value="90" step="1" oninput="calculate()">
+                                </div>
+                                <div class="form-group">
+                                    <label>Out of</label>
+                                    <input type="number" class="max-score" value="100" step="1" oninput="calculate()">
+                                </div>
+                                <button class="btn btn-remove btn-sm" onclick="removeGrade(this)">✕</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add btn-sm" onclick="addGrade(this)">+ Add Grade</button>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="category-name" value="Tests" oninput="calculate()">
+                            </div>
+                            <div class="form-group">
+                                <label>Weight (%)</label>
+                                <input type="number" class="category-weight" value="50" step="5" oninput="calculate()">
+                            </div>
+                            <button class="btn btn-remove" onclick="removeCategory(this)">✕</button>
+                        </div>
+                        <div class="grades-container">
+                            <div class="grade-row">
+                                <div class="form-group">
+                                    <label>Score</label>
+                                    <input type="number" class="score" value="85" step="1" oninput="calculate()">
+                                </div>
+                                <div class="form-group">
+                                    <label>Out of</label>
+                                    <input type="number" class="max-score" value="100" step="1" oninput="calculate()">
+                                </div>
+                                <button class="btn btn-remove btn-sm" onclick="removeGrade(this)">✕</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add btn-sm" onclick="addGrade(this)">+ Add Grade</button>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="category-name" value="Final Exam" oninput="calculate()">
+                            </div>
+                            <div class="form-group">
+                                <label>Weight (%)</label>
+                                <input type="number" class="category-weight" value="30" step="5" oninput="calculate()">
+                            </div>
+                            <button class="btn btn-remove" onclick="removeCategory(this)">✕</button>
+                        </div>
+                        <div class="grades-container">
+                            <div class="grade-row">
+                                <div class="form-group">
+                                    <label>Score</label>
+                                    <input type="number" class="score" value="" placeholder="TBD" step="1" oninput="calculate()">
+                                </div>
+                                <div class="form-group">
+                                    <label>Out of</label>
+                                    <input type="number" class="max-score" value="100" step="1" oninput="calculate()">
+                                </div>
+                                <button class="btn btn-remove btn-sm" onclick="removeGrade(this)">✕</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add btn-sm" onclick="addGrade(this)">+ Add Grade</button>
+                    </div>
+                </div>
+                <button class="btn btn-add" onclick="addCategory()">+ Add Category</button>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Current Grade</div>
+                    <div class="result-hero-value" id="currentGrade">0%</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="letterGrade">A</div>
+                        <div class="result-label">Letter Grade</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalWeight">0%</div>
+                        <div class="result-label">Weight Completed</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="pointsEarned">0/0</div>
+                        <div class="result-label">Points Earned</div>
+                    </div>
+                </div>
+
+                <div class="final-calc">
+                    <h3 style="color: var(--accent); margin-bottom: 15px;">🎯 What Do I Need on the Final?</h3>
+                    <div class="final-grid">
+                        <div class="form-group">
+                            <label>Desired Grade (%)</label>
+                            <input type="number" id="desiredGrade" value="90" step="1" oninput="calcFinalNeeded()">
+                        </div>
+                        <div class="form-group">
+                            <label>Final Weight (%)</label>
+                            <input type="number" id="finalWeight" value="30" step="5" oninput="calcFinalNeeded()">
+                        </div>
+                        <div class="form-group">
+                            <label>Score Needed</label>
+                            <input type="text" id="neededScore" value="0%" readonly style="background: var(--success); font-weight: bold; text-align: center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="gpa-calculator.html" class="related-link">📚 GPA Calculator</a>
+                    <a href="percentage-calculator.html" class="related-link">📊 Percentage</a>
+                    <a href="college-cost-calculator.html" class="related-link">🎓 College Cost</a>
+                    <a href="average-calculator.html" class="related-link">🔢 Average</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addCategory() {
+            const container = document.getElementById('categoriesContainer');
+            const card = document.createElement('div');
+            card.className = 'category-card';
+            card.innerHTML = `
+                <div class="category-header">
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <input type="text" class="category-name" value="New Category" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Weight (%)</label>
+                        <input type="number" class="category-weight" value="10" step="5" oninput="calculate()">
+                    </div>
+                    <button class="btn btn-remove" onclick="removeCategory(this)">✕</button>
+                </div>
+                <div class="grades-container">
+                    <div class="grade-row">
+                        <div class="form-group">
+                            <label>Score</label>
+                            <input type="number" class="score" value="" step="1" oninput="calculate()">
+                        </div>
+                        <div class="form-group">
+                            <label>Out of</label>
+                            <input type="number" class="max-score" value="100" step="1" oninput="calculate()">
+                        </div>
+                        <button class="btn btn-remove btn-sm" onclick="removeGrade(this)">✕</button>
+                    </div>
+                </div>
+                <button class="btn btn-add btn-sm" onclick="addGrade(this)">+ Add Grade</button>
+            `;
+            container.appendChild(card);
+            calculate();
+        }
+
+        function removeCategory(btn) {
+            const cards = document.querySelectorAll('.category-card');
+            if (cards.length > 1) {
+                btn.closest('.category-card').remove();
+                calculate();
+            }
+        }
+
+        function addGrade(btn) {
+            const container = btn.previousElementSibling;
+            const row = document.createElement('div');
+            row.className = 'grade-row';
+            row.innerHTML = `
+                <div class="form-group">
+                    <label>Score</label>
+                    <input type="number" class="score" value="" step="1" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label>Out of</label>
+                    <input type="number" class="max-score" value="100" step="1" oninput="calculate()">
+                </div>
+                <button class="btn btn-remove btn-sm" onclick="removeGrade(this)">✕</button>
+            `;
+            container.appendChild(row);
+        }
+
+        function removeGrade(btn) {
+            const container = btn.closest('.grades-container');
+            if (container.querySelectorAll('.grade-row').length > 1) {
+                btn.closest('.grade-row').remove();
+                calculate();
+            }
+        }
+
+        function getLetterGrade(pct) {
+            if (pct >= 93) return 'A';
+            if (pct >= 90) return 'A-';
+            if (pct >= 87) return 'B+';
+            if (pct >= 83) return 'B';
+            if (pct >= 80) return 'B-';
+            if (pct >= 77) return 'C+';
+            if (pct >= 73) return 'C';
+            if (pct >= 70) return 'C-';
+            if (pct >= 67) return 'D+';
+            if (pct >= 63) return 'D';
+            if (pct >= 60) return 'D-';
+            return 'F';
+        }
+
+        function calculate() {
+            const categories = document.querySelectorAll('.category-card');
+            let totalWeightedGrade = 0;
+            let totalWeightUsed = 0;
+            let totalPoints = 0;
+            let totalPossible = 0;
+            
+            categories.forEach(cat => {
+                const weight = parseFloat(cat.querySelector('.category-weight').value) || 0;
+                const scores = cat.querySelectorAll('.score');
+                const maxScores = cat.querySelectorAll('.max-score');
+                
+                let catPoints = 0;
+                let catMax = 0;
+                let hasGrades = false;
+                
+                scores.forEach((score, i) => {
+                    const s = parseFloat(score.value);
+                    const m = parseFloat(maxScores[i].value) || 100;
+                    if (!isNaN(s)) {
+                        catPoints += s;
+                        catMax += m;
+                        hasGrades = true;
+                    }
+                });
+                
+                if (hasGrades && catMax > 0) {
+                    const catPct = (catPoints / catMax) * 100;
+                    totalWeightedGrade += catPct * (weight / 100);
+                    totalWeightUsed += weight;
+                    totalPoints += catPoints;
+                    totalPossible += catMax;
+                }
+            });
+            
+            const currentGrade = totalWeightUsed > 0 ? (totalWeightedGrade / totalWeightUsed) * 100 : 0;
+            
+            document.getElementById('currentGrade').textContent = currentGrade.toFixed(1) + '%';
+            document.getElementById('letterGrade').textContent = getLetterGrade(currentGrade);
+            document.getElementById('totalWeight').textContent = totalWeightUsed.toFixed(0) + '%';
+            document.getElementById('pointsEarned').textContent = totalPoints.toFixed(0) + '/' + totalPossible.toFixed(0);
+            
+            calcFinalNeeded();
+        }
+
+        function calcFinalNeeded() {
+            const categories = document.querySelectorAll('.category-card');
+            let currentWeightedGrade = 0;
+            let currentWeight = 0;
+            
+            categories.forEach(cat => {
+                const weight = parseFloat(cat.querySelector('.category-weight').value) || 0;
+                const scores = cat.querySelectorAll('.score');
+                const maxScores = cat.querySelectorAll('.max-score');
+                
+                let catPoints = 0;
+                let catMax = 0;
+                let hasGrades = false;
+                
+                scores.forEach((score, i) => {
+                    const s = parseFloat(score.value);
+                    const m = parseFloat(maxScores[i].value) || 100;
+                    if (!isNaN(s)) {
+                        catPoints += s;
+                        catMax += m;
+                        hasGrades = true;
+                    }
+                });
+                
+                if (hasGrades && catMax > 0) {
+                    currentWeightedGrade += (catPoints / catMax) * weight;
+                    currentWeight += weight;
+                }
+            });
+            
+            const desiredGrade = parseFloat(document.getElementById('desiredGrade').value) || 0;
+            const finalWeight = parseFloat(document.getElementById('finalWeight').value) || 0;
+            
+            const neededOnFinal = (desiredGrade - currentWeightedGrade) / finalWeight * 100;
+            
+            document.getElementById('neededScore').value = neededOnFinal > 100 ? 'Not Possible' : 
+                                                           neededOnFinal < 0 ? 'Already Achieved!' :
+                                                           neededOnFinal.toFixed(1) + '%';
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

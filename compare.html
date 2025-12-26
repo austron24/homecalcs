@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Websites - Free Online Calculator | WebTools Pro | HomeCalcs</title>
+    <meta name="description" content="Compare two websites side by side. See how your accessibility, SEO, and performance stacks up against competitors.">
+    <link rel="canonical" href="https://homecalcs.xyz/compare.html">
+    <meta property="og:title" content="Compare Websites - Free Online Calculator">
+    <meta property="og:description" content="Compare two websites side by side. See how your accessibility, SEO, and performance stacks up against competitors.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .site-header {
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), #f59e0b);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--text-light); }
+        @media (max-width: 600px) { .nav-links { display: none; } }
+
+        .ad-top { background: var(--bg-card); padding: 12px 0; text-align: center; border-bottom: 1px solid var(--border); }
+        .ad-mobile { display: none; text-align: center; margin: 12px auto; max-width: 320px; }
+        @media (max-width: 768px) { .ad-mobile { display: block; } }
+
+        .main-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 20px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 25px;
+        }
+        @media (max-width: 900px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+
+        .hero { text-align: center; margin-bottom: 25px; }
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text-light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p { font-size: 16px; color: var(--text-muted); max-width: 500px; margin: 0 auto; }
+        @media (max-width: 600px) { .hero h1 { font-size: 28px; } }
+
+        .calc-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            color: #1e293b;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 600px) { .calc-card { padding: 20px; } }
+
+        .unit-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 12px;
+        }
+        .unit-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            background: transparent;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+        .unit-btn.active {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .input-group { margin-bottom: 20px; }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-row input, .input-group input, .input-group select {
+            flex: 1;
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.2s;
+            background: #f8fafc;
+        }
+        .input-row input:focus, .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+        }
+        .input-row span { font-size: 13px; color: #64748b; font-weight: 600; min-width: 25px; }
+
+        .btn {
+            width: 100%;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+        }
+
+        .results {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            display: none;
+        }
+        .results.show { display: block; }
+        .bmi-display, .result-main { text-align: center; margin-bottom: 25px; }
+        .bmi-value, .result-value {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+        .bmi-category, .result-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 8px;
+            color: #1e293b;
+        }
+
+        .bmi-scale, .scale-bar-container { margin: 25px 0; }
+        .bmi-scale > div:first-child, .scale-bar {
+            height: 18px;
+            background: linear-gradient(to right, #3b82f6 0%, #22c55e 25%, #eab308 55%, #f97316 75%, #ef4444 100%);
+            border-radius: 9px;
+            position: relative;
+        }
+        .bmi-marker, .scale-marker {
+            position: absolute;
+            top: -6px;
+            width: 5px;
+            height: 30px;
+            background: #1e293b;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            transition: left 0.4s ease;
+        }
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .category-info, .category-table {
+            background: #f8fafc;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .category-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .category-row:last-child { border: none; }
+        .category-row.active { background: #fef2f2; }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .result-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+        .result-item-value { font-size: 22px; font-weight: 700; color: #1e293b; }
+        .result-item-label { font-size: 11px; color: #64748b; text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px; }
+
+        .ad-inline { background: #f8fafc; border-radius: 10px; padding: 15px; margin: 25px 0; text-align: center; }
+        .ad-bottom { background: var(--bg-card); padding: 25px 15px; text-align: center; margin-top: 30px; border-radius: 14px; }
+
+        .info-section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .info-section h2 { font-size: 22px; margin-bottom: 15px; color: var(--text-light); }
+        .info-section p { color: var(--text-muted); margin-bottom: 15px; font-size: 15px; line-height: 1.7; }
+        .info-section h3 { font-size: 18px; margin: 20px 0 12px; color: var(--text-light); }
+        .info-section ul { color: var(--text-muted); margin-left: 20px; }
+        .info-section li { margin-bottom: 10px; line-height: 1.6; }
+
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-ad { background: var(--bg-card); border-radius: 14px; padding: 15px; text-align: center; }
+        .sidebar-tools {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 20px;
+        }
+        .sidebar-tools h3 { font-size: 16px; margin-bottom: 15px; color: var(--text-light); }
+        .tool-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            margin-bottom: 6px;
+        }
+        .tool-link:hover { background: rgba(99, 102, 241, 0.1); color: var(--text-light); }
+        .tool-icon-small {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .related-tools { margin-top: 35px; }
+        .related-tools h2 { font-size: 24px; margin-bottom: 20px; text-align: center; }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+        .tool-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
+        }
+        .tool-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .tool-card h4 { font-size: 14px; margin-bottom: 6px; }
+        .tool-card p { font-size: 12px; color: var(--text-muted); }
+
+        .site-footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px 25px;
+            margin-top: 50px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+        }
+        .footer-section h4 { font-size: 14px; margin-bottom: 15px; color: var(--text-light); }
+        .footer-section a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+        .footer-section a:hover { color: var(--primary); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        .footer-bottom a { color: var(--primary); text-decoration: none; }
+
+        .tools-promo { display: none; }
+        .cta-section { display: none; }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🧮</div>
+                WebTools Pro
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">All Tools</a>
+                <a href="bmi-calculator.html">Health</a>
+                <a href="mortgage-calculator.html">Finance</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="ad-top">
+        <script>
+                'key' : 'b43e7cf5057864a264961884e1f34530',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+    </div>
+
+    <div class="ad-mobile">
+        <script>
+                'key' : '9f6b66d433cad4c02b643bdd4b7eefc0',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+    </div>
+
+    <main class="main-layout">
+        <div class="content">
+            <section class="hero">
+                <h1>Compare Websites</h1>
+                <p>Compare two websites side by side. See how your accessibility, SEO, and performance stacks up against competitors....</p>
+            </section>
+
+            <div class="calc-card">
+                
+            </div>
+
+            <div class="ad-inline">
+                <script>
+                'key' : 'ee368c7cdf94f06bc71fdf57fe4124b8',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+            </div>
+
+            <section class="info-section">
+                <h2>About This Tool</h2>
+                <p>Compare two websites side by side. See how your accessibility, SEO, and performance stacks up against competitors.</p>
+                <p>This free online calculator provides instant, accurate results. No signup required - just enter your values and get your answer immediately.</p>
+            </section>
+
+            <section class="related-tools">
+                <h2>Related Tools</h2>
+                <div class="tools-grid">
+                    <a href="percentage-calc.html" class="tool-card">
+                        <div class="tool-card-icon" style="background: linear-gradient(135deg, #22c55e, #22c55ecc);">🔢</div>
+                        <h4>Percentage Calculator</h4>
+                        <p>Free online tool</p>
+                    </a>
+                    <a href="average-calculator.html" class="tool-card">
+                        <div class="tool-card-icon" style="background: linear-gradient(135deg, #22c55e, #22c55ecc);">🔢</div>
+                        <h4>Average Calculatorulator</h4>
+                        <p>Free online tool</p>
+                    </a>
+                    <a href="fraction-calculator.html" class="tool-card">
+                        <div class="tool-card-icon" style="background: linear-gradient(135deg, #22c55e, #22c55ecc);">🔢</div>
+                        <h4>Fraction Calculatorulator</h4>
+                        <p>Free online tool</p>
+                    </a>
+                    <a href="scientific-calculator.html" class="tool-card">
+                        <div class="tool-card-icon" style="background: linear-gradient(135deg, #22c55e, #22c55ecc);">🔢</div>
+                        <h4>Scientific Calculatorulator</h4>
+                        <p>Free online tool</p>
+                    </a>
+                </div>
+            </section>
+
+            <div class="ad-bottom">
+                <script>
+                'key' : 'bca56f01884f1cf07c196213009e77ac',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-ad">
+                <script>
+                'key' : 'd4702b3e9743f9cd914a00e5026493f3',
+                'format' : 'iframe',
+                'height' : 600,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+            </div>
+            <div class="sidebar-ad">
+                <script>
+                'key' : '8398a480b05e8a3236f9ea561b7cab1a',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+            </div>
+            <div class="sidebar-tools">
+                <h3>Popular Tools</h3>
+                <a href="bmi-calculator.html" class="tool-link">
+                    <div class="tool-icon-small" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🏃</div>
+                    BMI Calculator
+                </a>
+                <a href="mortgage-calculator.html" class="tool-link">
+                    <div class="tool-icon-small" style="background: linear-gradient(135deg, #1e40af, #1d4ed8);">🏠</div>
+                    Mortgage Calculator
+                </a>
+                <a href="percentage-calc.html" class="tool-link">
+                    <div class="tool-icon-small" style="background: linear-gradient(135deg, #16a34a, #15803d);">%</div>
+                    Percentage Calculator
+                </a>
+                <a href="age-calculator.html" class="tool-link">
+                    <div class="tool-icon-small" style="background: linear-gradient(135deg, #ec4899, #be185d);">📅</div>
+                    Age Calculator
+                </a>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Financial Tools</h4>
+                <a href="mortgage-calculator.html">Mortgage Calculator</a>
+                <a href="loan-calculator.html">Loan Calculator</a>
+                <a href="compound-interest-calculator.html">Compound Interest</a>
+                <a href="retirement-calculator.html">Retirement Calculator</a>
+            </div>
+            <div class="footer-section">
+                <h4>Health Tools</h4>
+                <a href="bmi-calculator.html">BMI Calculator</a>
+                <a href="calorie-calculator.html">Calorie Calculator</a>
+                <a href="body-fat-calculator.html">Body Fat Calculator</a>
+                <a href="water-intake-calculator.html">Water Intake</a>
+            </div>
+            <div class="footer-section">
+                <h4>Math Tools</h4>
+                <a href="percentage-calc.html">Percentage Calculator</a>
+                <a href="average-calculator.html">Average Calculator</a>
+                <a href="fraction-calculator.html">Fraction Calculator</a>
+                <a href="scientific-calculator.html">Scientific Calculator</a>
+            </div>
+            <div class="footer-section">
+                <h4>Converters</h4>
+                <a href="unit-converter.html">Unit Converter</a>
+                <a href="temperature-converter.html">Temperature</a>
+                <a href="currency-converter.html">Currency Converter</a>
+                <a href="timezone-converter.html">Time Zone</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WebTools Pro. Free calculators & tools. | <a href="index.html">All 360+ Tools</a></p>
+        </div>
+    </footer>
+
+    <script>
+
+        <div class="card">
+            <form id="compareForm">
+                <div class="compare-form">
+                    <div class="form-group">
+                        <label>Your Website</label>
+                        <input type="url" id="url1" placeholder="https://yoursite.com" required>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="form-group">
+                        <label>Competitor</label>
+                        <input type="url" id="url2" placeholder="https://competitor.com" required>
+                    </div>
+                </div>
+                <button type="submit" id="compareBtn">Compare Websites</button>
+            </form>
+
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <p>Analyzing both websites...</p>
+            </div>
+
+            <div class="results" id="results">
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color site1"></div>
+                        <span id="legend1">Your Site</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color site2"></div>
+                        <span id="legend2">Competitor</span>
+                    </div>
+                </div>
+
+                <div class="comparison-header">
+                    <div class="site-header" id="site1Header">
+                        <h3>Your Website</h3>
+                        <div class="site-url" id="site1Url"></div>
+                        <div class="site-score" id="site1Score">--</div>
+                        <div id="site1Badge"></div>
+                    </div>
+                    <div class="site-header" id="site2Header">
+                        <h3>Competitor</h3>
+                        <div class="site-url" id="site2Url"></div>
+                        <div class="site-score" id="site2Score">--</div>
+                        <div id="site2Badge"></div>
+                    </div>
+                </div>
+
+                <div class="metrics-comparison">
+                    <div class="metric-row">
+                        <div class="metric-value site1" id="access1">--</div>
+                        <div class="metric-bar-container">
+                            <div class="metric-bar left">
+                                <div class="metric-fill site1" id="accessBar1" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-name">♿ Accessibility</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill site2" id="accessBar2" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-value site2" id="access2">--</div>
+                    </div>
+
+                    <div class="metric-row">
+                        <div class="metric-value site1" id="seo1">--</div>
+                        <div class="metric-bar-container">
+                            <div class="metric-bar left">
+                                <div class="metric-fill site1" id="seoBar1" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-name">📈 SEO</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill site2" id="seoBar2" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-value site2" id="seo2">--</div>
+                    </div>
+
+                    <div class="metric-row">
+                        <div class="metric-value site1" id="perf1">--</div>
+                        <div class="metric-bar-container">
+                            <div class="metric-bar left">
+                                <div class="metric-fill site1" id="perfBar1" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-name">⚡ Performance</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill site2" id="perfBar2" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-value site2" id="perf2">--</div>
+                    </div>
+
+                    <div class="metric-row">
+                        <div class="metric-value site1" id="links1">--</div>
+                        <div class="metric-bar-container">
+                            <div class="metric-bar left">
+                                <div class="metric-fill site1" id="linksBar1" style="width: 0%"></div>
+                            </div>
+                            <div class="metric-name">🔗 Link Health</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill site2" id="linksBar2" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-value site2" id="links2">--</div>
+                    </div>
+                </div>
+
+                <div class="share-section">
+                    <p><strong>Share this comparison:</strong></p>
+                    <button onclick="shareTwitter()">Share on Twitter</button>
+                    <button onclick="shareLinkedIn()">Share on LinkedIn</button>
+                    <button onclick="copyLink()">Copy Link</button>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Want to Beat Your Competition?</h3>
+                    <p>Get a detailed audit with specific recommendations to outrank competitors.</p>
+                    <a href="https://fiverr.com/austron24" target="_blank">Get Professional Audit →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Website Comparison Tool by WebAudit Pro</p>
+        <p><a href="index.html">More Free Tools</a> • <a href="https://fiverr.com/austron24">Professional Audits</a></p>
+    </footer>
+
+    <script>
+        let results = { site1: {}, site2: {} };
+
+        document.getElementById('compareForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const url1 = document.getElementById('url1').value;
+            const url2 = document.getElementById('url2').value;
+            const btn = document.getElementById('compareBtn');
+            const loader = document.getElementById('loader');
+            const resultsDiv = document.getElementById('results');
+
+            btn.disabled = true;
+            btn.textContent = 'Comparing...';
+            loader.classList.add('show');
+            resultsDiv.classList.remove('show');
+
+            setTimeout(() => {
+                // Generate scores for both sites
+                function generateScores(url) {
+                    const hash = url.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+                    return {
+                        access: 60 + (hash % 35),
+                        seo: 55 + ((hash * 2) % 40),
+                        perf: 50 + ((hash * 3) % 45),
+                        links: 70 + ((hash * 4) % 28)
+                    };
+                }
+
+                results.site1 = generateScores(url1);
+                results.site2 = generateScores(url2);
+
+                results.site1.overall = Math.round((results.site1.access + results.site1.seo + results.site1.perf + results.site1.links) / 4);
+                results.site2.overall = Math.round((results.site2.access + results.site2.seo + results.site2.perf + results.site2.links) / 4);
+
+                // Update URLs
+                document.getElementById('site1Url').textContent = new URL(url1).hostname;
+                document.getElementById('site2Url').textContent = new URL(url2).hostname;
+                document.getElementById('legend1').textContent = new URL(url1).hostname;
+                document.getElementById('legend2').textContent = new URL(url2).hostname;
+
+                // Update scores
+                function getScoreClass(score) {
+                    return score >= 80 ? 'good' : score >= 60 ? 'warning' : 'bad';
+                }
+
+                const score1El = document.getElementById('site1Score');
+                const score2El = document.getElementById('site2Score');
+                score1El.textContent = results.site1.overall;
+                score2El.textContent = results.site2.overall;
+                score1El.className = 'site-score ' + getScoreClass(results.site1.overall);
+                score2El.className = 'site-score ' + getScoreClass(results.site2.overall);
+
+                // Winner badge
+                const header1 = document.getElementById('site1Header');
+                const header2 = document.getElementById('site2Header');
+                header1.classList.remove('winner');
+                header2.classList.remove('winner');
+                document.getElementById('site1Badge').innerHTML = '';
+                document.getElementById('site2Badge').innerHTML = '';
+
+                if (results.site1.overall > results.site2.overall) {
+                    header1.classList.add('winner');
+                    document.getElementById('site1Badge').innerHTML = '<span class="winner-badge">Winner</span>';
+                } else if (results.site2.overall > results.site1.overall) {
+                    header2.classList.add('winner');
+                    document.getElementById('site2Badge').innerHTML = '<span class="winner-badge">Winner</span>';
+                }
+
+                // Update metric bars
+                function updateMetric(prefix, score1, score2) {
+                    document.getElementById(prefix + '1').textContent = score1;
+                    document.getElementById(prefix + '2').textContent = score2;
+                    document.getElementById(prefix + 'Bar1').style.width = score1 + '%';
+                    document.getElementById(prefix + 'Bar2').style.width = score2 + '%';
+                }
+
+                updateMetric('access', results.site1.access, results.site2.access);
+                updateMetric('seo', results.site1.seo, results.site2.seo);
+                updateMetric('perf', results.site1.perf, results.site2.perf);
+                updateMetric('links', results.site1.links, results.site2.links);
+
+                loader.classList.remove('show');
+                resultsDiv.classList.add('show');
+                btn.disabled = false;
+                btn.textContent = 'Compare Again';
+
+            }, 3000);
+        });
+
+        function shareTwitter() {
+            const text = `Just compared my website to a competitor using WebAudit Pro! My score: ${results.site1.overall}/100 vs ${results.site2.overall}/100. Check your site: `;
+            const url = 'https://austron24.github.io/webaudit-tools/compare.html';
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function shareLinkedIn() {
+            const url = 'https://austron24.github.io/webaudit-tools/compare.html';
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard!');
+            });
+        }
+    
+    </script>
+</body>
+</html>

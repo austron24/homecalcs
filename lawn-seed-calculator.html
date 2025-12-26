@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawn Seed Calculator - Grass Seed Coverage Calculator | HomeCalcs</title>
+    <meta name="description" content="Free lawn seed calculator. Calculate how much grass seed you need for new lawns, overseeding, and bare patch repair.">
+    <meta name="keywords" content="lawn seed calculator, grass seed, overseeding calculator, lawn coverage, seeding rate">
+    <link rel="canonical" href="https://homecalcs.xyz/lawn-seed-calculator.html">
+    <style>
+        :root { --primary: #22c55e; --primary-dark: #16a34a; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .breakdown-row:last-child { border-bottom: none; }
+        .seed-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
+        .seed-card { background: var(--bg-input); padding: 15px; border-radius: 10px; }
+        .seed-name { color: var(--secondary); font-weight: bold; }
+        .seed-rate { color: var(--text-secondary); font-size: 0.9rem; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid, .seed-types { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>Lawn Seed Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>Lawn Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Lawn Length (feet)</label>
+                        <input type="number" id="length" value="50" min="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Lawn Width (feet)</label>
+                        <input type="number" id="width" value="30" min="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Or Enter Total Square Feet</label>
+                        <input type="number" id="totalSqFt" value="" min="1" oninput="calculateFromTotal()">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Type</label>
+                        <select id="projectType" onchange="calculate()">
+                            <option value="new" selected>New Lawn</option>
+                            <option value="overseed">Overseeding</option>
+                            <option value="patch">Bare Patch Repair</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Grass Type</label>
+                        <select id="grassType" onchange="calculate()">
+                            <option value="kentucky" selected>Kentucky Bluegrass</option>
+                            <option value="fescue">Tall Fescue</option>
+                            <option value="perennial">Perennial Ryegrass</option>
+                            <option value="bermuda">Bermuda Grass</option>
+                            <option value="zoysia">Zoysia Grass</option>
+                            <option value="bahia">Bahia Grass</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Extra Coverage (%)</label>
+                        <input type="number" id="extra" value="10" min="0" max="50" oninput="calculate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Seed Needed</div>
+                <div class="result-hero-value" id="seedNeeded">0 lbs</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="sqFt">0</div>
+                    <div class="result-label">Square Feet</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="seedRate">0</div>
+                    <div class="result-label">lbs per 1000 sq ft</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="bags">0</div>
+                    <div class="result-label">Bags (typical 5 lb)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Seeding Details</h2>
+                <div class="breakdown-row"><span>Area to Seed</span><span id="areaBreak">0 sq ft</span></div>
+                <div class="breakdown-row"><span>Base Seed Rate</span><span id="rateBreak">0 lbs/1000 sq ft</span></div>
+                <div class="breakdown-row"><span>Base Amount</span><span id="baseAmount">0 lbs</span></div>
+                <div class="breakdown-row"><span>Extra Coverage</span><span id="extraAmount">0 lbs</span></div>
+                <div class="breakdown-row" style="font-weight: bold; color: var(--success);"><span>Total Seed</span><span id="totalSeed">0 lbs</span></div>
+            </div>
+
+            <div class="card">
+                <h2>Grass Seed Types & Rates</h2>
+                <div class="seed-types" id="seedTypes"></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="lawn-fertilizer-calculator.html" class="related-link">Lawn Fertilizer</a>
+                    <a href="lawn-care-calculator.html" class="related-link">Lawn Care Cost</a>
+                    <a href="mulch-calculator.html" class="related-link">Mulch Calculator</a>
+                    <a href="square-footage-calculator.html" class="related-link">Square Footage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seeding rates in lbs per 1000 sq ft
+        const grassTypes = {
+            kentucky: { name: 'Kentucky Bluegrass', new: 3, overseed: 2, patch: 4, climate: 'Cool season' },
+            fescue: { name: 'Tall Fescue', new: 8, overseed: 4, patch: 10, climate: 'Cool season' },
+            perennial: { name: 'Perennial Ryegrass', new: 8, overseed: 4, patch: 10, climate: 'Cool season' },
+            bermuda: { name: 'Bermuda Grass', new: 2, overseed: 1, patch: 3, climate: 'Warm season' },
+            zoysia: { name: 'Zoysia Grass', new: 2, overseed: 1, patch: 3, climate: 'Warm season' },
+            bahia: { name: 'Bahia Grass', new: 8, overseed: 4, patch: 10, climate: 'Warm season' }
+        };
+
+        const projectMults = { new: 'new', overseed: 'overseed', patch: 'patch' };
+
+        function calculateFromTotal() {
+            const total = document.getElementById('totalSqFt').value;
+            if (total) {
+                const sqrt = Math.sqrt(parseFloat(total));
+                document.getElementById('length').value = Math.round(sqrt * 1.5);
+                document.getElementById('width').value = Math.round(sqrt / 1.5);
+            }
+            calculate();
+        }
+
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const totalInput = parseFloat(document.getElementById('totalSqFt').value);
+            const projectType = document.getElementById('projectType').value;
+            const grassType = document.getElementById('grassType').value;
+            const extra = parseFloat(document.getElementById('extra').value) / 100 || 0;
+
+            const sqFt = totalInput || (length * width);
+            const grass = grassTypes[grassType];
+            const rate = grass[projectMults[projectType]];
+
+            const baseAmount = (sqFt / 1000) * rate;
+            const extraAmount = baseAmount * extra;
+            const totalSeed = baseAmount + extraAmount;
+            const bags = Math.ceil(totalSeed / 5);
+
+            document.getElementById('seedNeeded').textContent = totalSeed.toFixed(1) + ' lbs';
+            document.getElementById('sqFt').textContent = sqFt.toLocaleString();
+            document.getElementById('seedRate').textContent = rate;
+            document.getElementById('bags').textContent = bags;
+
+            document.getElementById('areaBreak').textContent = sqFt.toLocaleString() + ' sq ft';
+            document.getElementById('rateBreak').textContent = rate + ' lbs/1000 sq ft';
+            document.getElementById('baseAmount').textContent = baseAmount.toFixed(1) + ' lbs';
+            document.getElementById('extraAmount').textContent = '+' + extraAmount.toFixed(1) + ' lbs';
+            document.getElementById('totalSeed').textContent = totalSeed.toFixed(1) + ' lbs';
+
+            // Seed types comparison
+            let typesHTML = '';
+            for (const [key, info] of Object.entries(grassTypes)) {
+                const isSelected = key === grassType;
+                typesHTML += `
+                    <div class="seed-card" style="${isSelected ? 'border: 2px solid var(--secondary);' : ''}">
+                        <div class="seed-name">${info.name}</div>
+                        <div class="seed-rate">${info.climate}</div>
+                        <div class="seed-rate">New: ${info.new} lbs/1000 sq ft</div>
+                        <div class="seed-rate">Overseed: ${info.overseed} lbs/1000 sq ft</div>
+                    </div>
+                `;
+            }
+            document.getElementById('seedTypes').innerHTML = typesHTML;
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

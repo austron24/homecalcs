@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbrella Insurance Calculator - Coverage & Cost Estimator | HomeCalcs</title>
+    <meta name="description" content="Free umbrella insurance calculator. Estimate how much umbrella coverage you need and the annual cost based on your assets and risk factors.">
+    <meta name="keywords" content="umbrella insurance calculator, personal liability, umbrella policy cost, excess liability, liability coverage">
+    <link rel="canonical" href="https://homecalcs.xyz/umbrella-insurance-calculator.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .info-box { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid var(--success); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>☂️ Umbrella Insurance Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>💰 Your Assets</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Home Equity ($)</label>
+                        <input type="number" id="homeEquity" value="200000" step="10000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Investment/Savings ($)</label>
+                        <input type="number" id="investments" value="150000" step="10000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Retirement Accounts ($)</label>
+                        <input type="number" id="retirement" value="300000" step="10000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Other Assets ($)</label>
+                        <input type="number" id="other" value="50000" step="5000" oninput="calculate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>⚠️ Risk Factors</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Number of Vehicles</label>
+                        <select id="vehicles" onchange="calculate()">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Teen Drivers</label>
+                        <select id="teens" onchange="calculate()">
+                            <option value="0" selected>None</option>
+                            <option value="1">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Swimming Pool</label>
+                        <select id="pool" onchange="calculate()">
+                            <option value="no" selected>No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dogs (any breed)</label>
+                        <select id="dogs" onchange="calculate()">
+                            <option value="0" selected>None</option>
+                            <option value="1">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rental Properties</label>
+                        <select id="rentals" onchange="calculate()">
+                            <option value="0" selected>None</option>
+                            <option value="1">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Watercraft/ATVs</label>
+                        <select id="watercraft" onchange="calculate()">
+                            <option value="0" selected>None</option>
+                            <option value="1">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Recommended Coverage</div>
+                <div class="result-hero-value" id="coverage">$0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="netWorth">$0</div>
+                    <div class="result-label">Total Net Worth</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="annualCost">$0</div>
+                    <div class="result-label">Est. Annual Premium</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="monthlyCost">$0</div>
+                    <div class="result-label">Est. Monthly Cost</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💡 Why Umbrella Insurance?</h2>
+                <div class="info-box">
+                    Umbrella insurance provides extra liability coverage beyond your home and auto policies. It protects your assets if you're sued for:
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Auto accidents causing serious injury</li>
+                        <li>Injuries on your property (slip and fall)</li>
+                        <li>Dog bites</li>
+                        <li>Defamation/libel claims</li>
+                        <li>Landlord liability</li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="life-insurance-calculator.html" class="related-link">👨‍👩‍👧 Life Insurance</a>
+                    <a href="car-insurance-calculator.html" class="related-link">🚗 Auto Insurance</a>
+                    <a href="net-worth-calculator.html" class="related-link">💰 Net Worth</a>
+                    <a href="home-value-calculator.html" class="related-link">🏠 Home Value</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const homeEquity = parseFloat(document.getElementById('homeEquity').value) || 0;
+            const investments = parseFloat(document.getElementById('investments').value) || 0;
+            const retirement = parseFloat(document.getElementById('retirement').value) || 0;
+            const other = parseFloat(document.getElementById('other').value) || 0;
+            
+            const vehicles = parseInt(document.getElementById('vehicles').value);
+            const teens = parseInt(document.getElementById('teens').value);
+            const pool = document.getElementById('pool').value === 'yes';
+            const dogs = parseInt(document.getElementById('dogs').value);
+            const rentals = parseInt(document.getElementById('rentals').value);
+            const watercraft = parseInt(document.getElementById('watercraft').value);
+
+            // Calculate net worth (retirement accounts often protected, but include for coverage calc)
+            const netWorth = homeEquity + investments + retirement + other;
+            
+            // Calculate risk score
+            let riskScore = 0;
+            riskScore += vehicles * 0.5;
+            riskScore += teens * 2;
+            riskScore += pool ? 1.5 : 0;
+            riskScore += dogs * 1;
+            riskScore += rentals * 2;
+            riskScore += watercraft * 1.5;
+
+            // Recommended coverage: net worth + future earnings exposure
+            let baseCoverage = netWorth;
+            // Add for risk factors
+            baseCoverage *= (1 + riskScore * 0.1);
+            
+            // Round to nearest $1M
+            let coverage = Math.ceil(baseCoverage / 1000000) * 1000000;
+            coverage = Math.max(coverage, 1000000); // Minimum $1M
+            coverage = Math.min(coverage, 10000000); // Cap at $10M for this calculator
+
+            // Estimate premium ($150-$300 per million for first $1M, less for additional)
+            let annualCost = 200; // First $1M
+            if (coverage > 1000000) annualCost += ((coverage - 1000000) / 1000000) * 100;
+            
+            // Adjust for risk factors
+            annualCost *= (1 + riskScore * 0.08);
+            annualCost = Math.round(annualCost);
+
+            document.getElementById('coverage').textContent = '$' + (coverage / 1000000) + 'M';
+            document.getElementById('netWorth').textContent = '$' + netWorth.toLocaleString();
+            document.getElementById('annualCost').textContent = '$' + annualCost + '/yr';
+            document.getElementById('monthlyCost').textContent = '$' + Math.round(annualCost / 12) + '/mo';
+        }
+
+        calculate();
+    </script>
+</body>
+</html>

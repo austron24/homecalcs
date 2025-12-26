@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer - Create Event Countdowns | HomeCalcs</title>
+    <meta name="description" content="Free countdown timer. Create countdowns for events, holidays, birthdays. Share countdown links with others.">
+    <meta name="keywords" content="countdown timer, event countdown, countdown clock, timer, days until">
+    <link rel="canonical" href="https://homecalcs.xyz/countdown-timer.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .countdown-display { text-align: center; padding: 40px 20px; background: var(--bg-input); border-radius: 16px; margin-bottom: 20px; }
+        .event-name { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; }
+        .countdown-units { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .countdown-unit { background: var(--bg-dark); padding: 20px 30px; border-radius: 12px; min-width: 100px; }
+        .countdown-value { font-size: 3rem; font-weight: 800; color: var(--secondary); }
+        .countdown-label { color: var(--text-secondary); font-size: 0.9rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .action-btn { width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; margin-top: 10px; }
+        .action-btn:hover { transform: translateY(-2px); }
+        .presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .preset-btn { padding: 12px; border: 2px solid var(--border); border-radius: 8px; background: var(--bg-input); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease; }
+        .preset-btn:hover { border-color: var(--primary); background: var(--primary); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .header h1 { font-size: 1.8rem; } .form-row { grid-template-columns: 1fr; } .countdown-value { font-size: 2rem; } .countdown-unit { min-width: 70px; padding: 15px; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+    
+    <header class="header">
+        <h1>⏳ Countdown Timer</h1>
+        <p>Create countdowns for events, holidays, and special occasions.</p>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <div class="countdown-display">
+                    <div class="event-name" id="eventName">Your Event</div>
+                    <div class="countdown-units">
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="days">0</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="hours">0</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="minutes">0</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="seconds">0</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>⚙️ Set Your Countdown</h2>
+                <div class="form-group">
+                    <label>Event Name</label>
+                    <input type="text" id="eventInput" placeholder="My Event" oninput="updateEventName()">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="dateInput" onchange="startCountdown()">
+                    </div>
+                    <div class="form-group">
+                        <label>Time (optional)</label>
+                        <input type="time" id="timeInput" onchange="startCountdown()">
+                    </div>
+                </div>
+                
+                <h3 style="color: var(--text-secondary); margin-bottom: 15px;">Quick Presets</h3>
+                <div class="presets">
+                    <button class="preset-btn" onclick="setPreset('newyear')">🎆 New Year</button>
+                    <button class="preset-btn" onclick="setPreset('christmas')">🎄 Christmas</button>
+                    <button class="preset-btn" onclick="setPreset('valentine')">❤️ Valentine's</button>
+                    <button class="preset-btn" onclick="setPreset('halloween')">🎃 Halloween</button>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="date-calculator.html" class="related-link">📅 Date Calculator</a>
+                    <a href="age-calculator.html" class="related-link">🎂 Age Calculator</a>
+                    <a href="stopwatch.html" class="related-link">⏱️ Stopwatch</a>
+                    <a href="pomodoro-timer.html" class="related-link">🍅 Pomodoro Timer</a>
+                    <a href="time-zone-converter.html" class="related-link">🌍 Time Zones</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let targetDate = null;
+        let interval = null;
+        
+        function updateEventName() {
+            const name = document.getElementById('eventInput').value || 'Your Event';
+            document.getElementById('eventName').textContent = name;
+        }
+        
+        function startCountdown() {
+            const date = document.getElementById('dateInput').value;
+            const time = document.getElementById('timeInput').value || '00:00';
+            
+            if (!date) return;
+            
+            targetDate = new Date(date + 'T' + time);
+            
+            if (interval) clearInterval(interval);
+            interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+        
+        function updateCountdown() {
+            if (!targetDate) return;
+            
+            const now = new Date();
+            const diff = targetDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+                clearInterval(interval);
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        function setPreset(type) {
+            const now = new Date();
+            let year = now.getFullYear();
+            let month, day, name;
+            
+            switch(type) {
+                case 'newyear':
+                    month = '01'; day = '01'; name = '🎆 New Year'; year++;
+                    break;
+                case 'christmas':
+                    month = '12'; day = '25'; name = '🎄 Christmas';
+                    if (now.getMonth() === 11 && now.getDate() > 25) year++;
+                    break;
+                case 'valentine':
+                    month = '02'; day = '14'; name = "❤️ Valentine's Day";
+                    if (now.getMonth() > 1 || (now.getMonth() === 1 && now.getDate() > 14)) year++;
+                    break;
+                case 'halloween':
+                    month = '10'; day = '31'; name = '🎃 Halloween';
+                    if (now.getMonth() > 9 || (now.getMonth() === 9 && now.getDate() > 31)) year++;
+                    break;
+            }
+            
+            document.getElementById('eventInput').value = name;
+            document.getElementById('dateInput').value = `${year}-${month}-${day}`;
+            document.getElementById('timeInput').value = '00:00';
+            updateEventName();
+            startCountdown();
+        }
+        
+        // Set default to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('dateInput').value = tomorrow.toISOString().split('T')[0];
+        startCountdown();
+    </script>
+</body>
+</html>

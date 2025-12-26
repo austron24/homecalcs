@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator - Restaurant Tip & Bill Splitter | HomeCalcs</title>
+    <meta name="description" content="Free tip calculator. Calculate restaurant tips, split bills between friends, and figure out the perfect gratuity.">
+    <meta name="keywords" content="tip calculator, gratuity calculator, bill splitter, restaurant tip, how much to tip">
+    <link rel="canonical" href="https://homecalcs.xyz/tip-calculator.html">
+    <style>
+        :root { --primary: #f59e0b; --primary-dark: #d97706; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus { outline: none; border-color: var(--primary); }
+        .tip-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tip-btn { padding: 12px 20px; border: 2px solid var(--border); border-radius: 10px; background: var(--bg-input); color: var(--text-primary); cursor: pointer; font-size: 1rem; transition: all 0.2s; }
+        .tip-btn:hover, .tip-btn.active { background: var(--primary); border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🍽️ Tip Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>💵 Calculate Your Tip</h2>
+                <div class="form-group">
+                    <label>Bill Amount ($)</label>
+                    <input type="number" id="billAmount" value="85" step="0.01" oninput="calculate()">
+                </div>
+                
+                <label style="display: block; margin-bottom: 10px; color: var(--text-secondary);">Tip Percentage</label>
+                <div class="tip-buttons">
+                    <button class="tip-btn" onclick="setTip(10)">10%</button>
+                    <button class="tip-btn" onclick="setTip(15)">15%</button>
+                    <button class="tip-btn" onclick="setTip(18)">18%</button>
+                    <button class="tip-btn active" onclick="setTip(20)">20%</button>
+                    <button class="tip-btn" onclick="setTip(25)">25%</button>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Custom Tip (%)</label>
+                        <input type="number" id="tipPercent" value="20" step="1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Split Between</label>
+                        <input type="number" id="splitCount" value="1" min="1" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Total Per Person</div>
+                    <div class="result-hero-value" id="perPerson">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="tipAmount">$0</div>
+                        <div class="result-label">Tip Amount</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="totalBill">$0</div>
+                        <div class="result-label">Total Bill</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="tipPerPerson">$0</div>
+                        <div class="result-label">Tip Per Person</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="billPerPerson">$0</div>
+                        <div class="result-label">Bill Per Person</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Tip Comparison</h2>
+                <div id="tipComparison"></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="sales-tax-calculator.html" class="related-link">🧾 Sales Tax</a>
+                    <a href="discount-calculator.html" class="related-link">🏷️ Discount</a>
+                    <a href="percentage-calculator.html" class="related-link">📊 Percentage</a>
+                    <a href="split-bill-calculator.html" class="related-link">👥 Split Bill</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setTip(pct) {
+            document.getElementById('tipPercent').value = pct;
+            document.querySelectorAll('.tip-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            calculate();
+        }
+
+        function calculate() {
+            const bill = parseFloat(document.getElementById('billAmount').value) || 0;
+            const tipPct = parseFloat(document.getElementById('tipPercent').value) / 100 || 0;
+            const split = parseInt(document.getElementById('splitCount').value) || 1;
+
+            const tipAmount = bill * tipPct;
+            const totalBill = bill + tipAmount;
+            const perPerson = totalBill / split;
+            const tipPerPerson = tipAmount / split;
+            const billPerPerson = bill / split;
+
+            document.getElementById('perPerson').textContent = '$' + perPerson.toFixed(2);
+            document.getElementById('tipAmount').textContent = '$' + tipAmount.toFixed(2);
+            document.getElementById('totalBill').textContent = '$' + totalBill.toFixed(2);
+            document.getElementById('tipPerPerson').textContent = '$' + tipPerPerson.toFixed(2);
+            document.getElementById('billPerPerson').textContent = '$' + billPerPerson.toFixed(2);
+
+            const tips = [10, 15, 18, 20, 25, 30];
+            let compHtml = '';
+            tips.forEach(t => {
+                const tip = bill * (t / 100);
+                const total = bill + tip;
+                compHtml += '<div class="breakdown-row"><span>' + t + '%</span><span>Tip: $' + tip.toFixed(2) + '</span><span>Total: $' + total.toFixed(2) + '</span></div>';
+            });
+            document.getElementById('tipComparison').innerHTML = compHtml;
+        }
+        calculate();
+    </script>
+</body>
+</html>

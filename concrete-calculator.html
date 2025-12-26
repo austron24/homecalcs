@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Calculator - Cubic Yards & Bags Needed | HomeCalcs</title>
+    <meta name="description" content="Free concrete calculator. Calculate how much concrete you need in cubic yards, cubic feet, and bags for your project.">
+    <meta name="keywords" content="concrete calculator, cubic yards, concrete bags, cement calculator, concrete estimator">
+    <link rel="canonical" href="https://homecalcs.xyz/concrete-calculator.html">
+    <style>
+        :root { --primary: #64748b; --primary-dark: #475569; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🏗️ Concrete Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Slab Dimensions</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Length (feet)</label>
+                        <input type="number" id="length" value="10" step="0.5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Width (feet)</label>
+                        <input type="number" id="width" value="10" step="0.5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Thickness (inches)</label>
+                        <input type="number" id="thickness" value="4" step="0.5" oninput="calculate()">
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Concrete Needed</div>
+                    <div class="result-hero-value" id="cubicYards">0 yd³</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="cubicFeet">0</div>
+                        <div class="result-label">Cubic Feet</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="bags40">0</div>
+                        <div class="result-label">40 lb Bags</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="bags60">0</div>
+                        <div class="result-label">60 lb Bags</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="bags80">0</div>
+                        <div class="result-label">80 lb Bags</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💰 Cost Estimate</h2>
+                <div class="breakdown-row"><span>Ready-Mix Delivery (~$125/yd³)</span><span id="readyMixCost">$0</span></div>
+                <div class="breakdown-row"><span>80 lb Bags (~$6/bag)</span><span id="bagsCost">$0</span></div>
+                <div class="breakdown-row"><span>Add 10% for waste</span><span id="withWaste">0 yd³</span></div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Common Thicknesses</h2>
+                <div class="breakdown-row"><span>Sidewalk/Patio</span><span>4 inches</span></div>
+                <div class="breakdown-row"><span>Driveway</span><span>4-6 inches</span></div>
+                <div class="breakdown-row"><span>Garage Floor</span><span>4-6 inches</span></div>
+                <div class="breakdown-row"><span>Foundation</span><span>8-12 inches</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="gravel-calculator.html" class="related-link">🪨 Gravel</a>
+                    <a href="mulch-calculator.html" class="related-link">🌿 Mulch</a>
+                    <a href="paver-calculator.html" class="related-link">🧱 Pavers</a>
+                    <a href="square-footage-calculator.html" class="related-link">📐 Square Footage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const thickness = parseFloat(document.getElementById('thickness').value) || 0;
+
+            const cubicFeet = length * width * (thickness / 12);
+            const cubicYards = cubicFeet / 27;
+            const withWaste = cubicYards * 1.1;
+
+            const bags40 = Math.ceil(cubicFeet / 0.011);
+            const bags60 = Math.ceil(cubicFeet / 0.017);
+            const bags80 = Math.ceil(cubicFeet / 0.022);
+
+            document.getElementById('cubicYards').textContent = cubicYards.toFixed(2) + ' yd³';
+            document.getElementById('cubicFeet').textContent = cubicFeet.toFixed(1) + ' ft³';
+            document.getElementById('bags40').textContent = bags40;
+            document.getElementById('bags60').textContent = bags60;
+            document.getElementById('bags80').textContent = bags80;
+            document.getElementById('readyMixCost').textContent = '$' + Math.round(withWaste * 125);
+            document.getElementById('bagsCost').textContent = '$' + Math.round(bags80 * 6);
+            document.getElementById('withWaste').textContent = withWaste.toFixed(2) + ' yd³';
+        }
+        calculate();
+    </script>
+</body>
+</html>

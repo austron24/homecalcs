@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD Calculator - Certificate of Deposit Interest | HomeCalcs</title>
+    <meta name="description" content="Free CD calculator. Calculate earnings on certificates of deposit with different terms, rates, and compounding frequencies.">
+    <meta name="keywords" content="CD calculator, certificate of deposit, CD interest, CD rates, savings calculator">
+    <link rel="canonical" href="https://homecalcs.xyz/cd-calculator.html">
+    <style>
+        :root { --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>💿 CD Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📊 CD Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Initial Deposit ($)</label>
+                        <input type="number" id="deposit" value="10000" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Annual Interest Rate (APY %)</label>
+                        <input type="number" id="rate" value="5.0" step="0.1" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>CD Term</label>
+                        <select id="term" onchange="calculate()">
+                            <option value="3">3 Months</option>
+                            <option value="6">6 Months</option>
+                            <option value="12" selected>1 Year</option>
+                            <option value="18">18 Months</option>
+                            <option value="24">2 Years</option>
+                            <option value="36">3 Years</option>
+                            <option value="48">4 Years</option>
+                            <option value="60">5 Years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Compounding</label>
+                        <select id="compounding" onchange="calculate()">
+                            <option value="365">Daily</option>
+                            <option value="12" selected>Monthly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="1">Annually</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">CD Value at Maturity</div>
+                    <div class="result-hero-value" id="finalValue">$0</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="interestEarned">$0</div>
+                        <div class="result-label">Interest Earned</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="apy">0%</div>
+                        <div class="result-label">Effective APY</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="monthlyInterest">$0</div>
+                        <div class="result-label">Avg Monthly Interest</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="dailyInterest">$0</div>
+                        <div class="result-label">Avg Daily Interest</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📅 CD Term Comparison</h2>
+                <div id="termComparison"></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="compound-interest-calculator.html" class="related-link">💵 Compound Interest</a>
+                    <a href="savings-goal-calculator.html" class="related-link">🎯 Savings Goal</a>
+                    <a href="investment-calculator.html" class="related-link">📈 Investment</a>
+                    <a href="apy-calculator.html" class="related-link">📊 APY Calculator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateCD(principal, rate, months, compounding) {
+            const years = months / 12;
+            const n = compounding;
+            const r = rate / 100;
+            return principal * Math.pow(1 + r/n, n * years);
+        }
+
+        function calculate() {
+            const deposit = parseFloat(document.getElementById('deposit').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) || 0;
+            const term = parseInt(document.getElementById('term').value);
+            const compounding = parseInt(document.getElementById('compounding').value);
+
+            const finalValue = calculateCD(deposit, rate, term, compounding);
+            const interestEarned = finalValue - deposit;
+            const effectiveAPY = (Math.pow(finalValue / deposit, 12 / term) - 1) * 100;
+            const monthlyInterest = interestEarned / term;
+            const dailyInterest = interestEarned / (term * 30);
+
+            document.getElementById('finalValue').textContent = '$' + finalValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('interestEarned').textContent = '$' + interestEarned.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('apy').textContent = effectiveAPY.toFixed(2) + '%';
+            document.getElementById('monthlyInterest').textContent = '$' + monthlyInterest.toFixed(2);
+            document.getElementById('dailyInterest').textContent = '$' + dailyInterest.toFixed(2);
+
+            const terms = [3, 6, 12, 24, 36, 60];
+            let comparisonHtml = '';
+            terms.forEach(t => {
+                const val = calculateCD(deposit, rate, t, compounding);
+                const interest = val - deposit;
+                const termLabel = t < 12 ? t + ' months' : (t / 12) + ' year' + (t > 12 ? 's' : '');
+                comparisonHtml += '<div class="breakdown-row"><span>' + termLabel + '</span><span style="color: var(--success);">+$' + interest.toFixed(2) + '</span><span>$' + val.toFixed(2) + '</span></div>';
+            });
+            document.getElementById('termComparison').innerHTML = comparisonHtml;
+        }
+        calculate();
+    </script>
+</body>
+</html>

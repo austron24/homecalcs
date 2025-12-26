@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter - Exchange Rate Calculator | HomeCalcs</title>
+    <meta name="description" content="Free currency converter. Convert between major world currencies with up-to-date exchange rates.">
+    <meta name="keywords" content="currency converter, exchange rate calculator, USD to EUR, money converter">
+    <link rel="canonical" href="https://homecalcs.xyz/currency-converter.html">
+    <style>
+        :root { --primary: #059669; --primary-dark: #047857; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        .swap-btn { background: var(--primary); border: none; padding: 15px 30px; border-radius: 10px; color: white; font-size: 1.2rem; cursor: pointer; margin: 20px auto; display: block; }
+        .swap-btn:hover { background: var(--primary-dark); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>💱 Currency Converter</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>💵 Convert Currency</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="amount" value="100" step="any" oninput="convert()">
+                    </div>
+                    <div class="form-group">
+                        <label>From Currency</label>
+                        <select id="from" onchange="convert()">
+                            <option value="USD" selected>USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                            <option value="MXN">MXN - Mexican Peso</option>
+                            <option value="BRL">BRL - Brazilian Real</option>
+                            <option value="KRW">KRW - South Korean Won</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="swap-btn" onclick="swap()">⇅ Swap</button>
+
+                <div class="form-group">
+                    <label>To Currency</label>
+                    <select id="to" onchange="convert()">
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR" selected>EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="CNY">CNY - Chinese Yuan</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="MXN">MXN - Mexican Peso</option>
+                        <option value="BRL">BRL - Brazilian Real</option>
+                        <option value="KRW">KRW - South Korean Won</option>
+                    </select>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Converted Amount</div>
+                    <div class="result-hero-value" id="result">0.00</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Exchange Rates (vs USD)</h2>
+                <div class="breakdown-row"><span>EUR - Euro</span><span>0.92</span></div>
+                <div class="breakdown-row"><span>GBP - British Pound</span><span>0.79</span></div>
+                <div class="breakdown-row"><span>JPY - Japanese Yen</span><span>149.50</span></div>
+                <div class="breakdown-row"><span>CAD - Canadian Dollar</span><span>1.36</span></div>
+                <div class="breakdown-row"><span>AUD - Australian Dollar</span><span>1.53</span></div>
+                <div class="breakdown-row"><span>CHF - Swiss Franc</span><span>0.88</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="unit-converter.html" class="related-link">📐 Unit Converter</a>
+                    <a href="tip-calculator.html" class="related-link">💵 Tip Calculator</a>
+                    <a href="percentage-calculator.html" class="related-link">📊 Percentage</a>
+                    <a href="inflation-calculator.html" class="related-link">📈 Inflation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Approximate exchange rates (vs USD)
+        const rates = {
+            USD: 1.00,
+            EUR: 0.92,
+            GBP: 0.79,
+            JPY: 149.50,
+            CAD: 1.36,
+            AUD: 1.53,
+            CHF: 0.88,
+            CNY: 7.24,
+            INR: 83.12,
+            MXN: 17.15,
+            BRL: 4.97,
+            KRW: 1318.50
+        };
+
+        function convert() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+
+            // Convert to USD first, then to target currency
+            const inUSD = amount / rates[from];
+            const result = inUSD * rates[to];
+
+            document.getElementById('result').textContent = result.toLocaleString(undefined, { 
+                minimumFractionDigits: 2, 
+                maximumFractionDigits: 2 
+            }) + ' ' + to;
+        }
+
+        function swap() {
+            const from = document.getElementById('from');
+            const to = document.getElementById('to');
+            const temp = from.value;
+            from.value = to.value;
+            to.value = temp;
+            convert();
+        }
+
+        convert();
+    </script>
+</body>
+</html>

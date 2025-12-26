@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Converter - Kitchen Measurement Calculator | HomeCalcs</title>
+    <meta name="description" content="Free cooking converter. Convert cups, tablespoons, teaspoons, ounces, grams, and more. Essential for recipes and baking.">
+    <meta name="keywords" content="cooking converter, kitchen calculator, cups to tablespoons, grams to cups, recipe converter, baking measurements">
+    <link rel="canonical" href="https://homecalcs.xyz/cooking-converter.html">
+    <style>
+        :root { --primary: #f97316; --primary-dark: #ea580c; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
+        .quick-card { background: var(--bg-input); padding: 15px; border-radius: 10px; text-align: center; }
+        .quick-value { font-size: 1.2rem; font-weight: bold; color: var(--secondary); }
+        .quick-label { font-size: 0.85rem; color: var(--text-secondary); }
+        .ref-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .ref-table th, .ref-table td { padding: 10px; text-align: center; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        .ref-table th { color: var(--secondary); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .quick-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>Cooking Converter</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>Convert Measurements</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="amount" value="1" min="0" step="0.25" oninput="convert()">
+                    </div>
+                    <div class="form-group">
+                        <label>From</label>
+                        <select id="fromUnit" onchange="convert()">
+                            <option value="cup">Cup</option>
+                            <option value="tbsp" selected>Tablespoon</option>
+                            <option value="tsp">Teaspoon</option>
+                            <option value="floz">Fluid Ounce</option>
+                            <option value="ml">Milliliter</option>
+                            <option value="liter">Liter</option>
+                            <option value="oz">Ounce (weight)</option>
+                            <option value="gram">Gram</option>
+                            <option value="lb">Pound</option>
+                            <option value="kg">Kilogram</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>To</label>
+                        <select id="toUnit" onchange="convert()">
+                            <option value="cup">Cup</option>
+                            <option value="tbsp">Tablespoon</option>
+                            <option value="tsp" selected>Teaspoon</option>
+                            <option value="floz">Fluid Ounce</option>
+                            <option value="ml">Milliliter</option>
+                            <option value="liter">Liter</option>
+                            <option value="oz">Ounce (weight)</option>
+                            <option value="gram">Gram</option>
+                            <option value="lb">Pound</option>
+                            <option value="kg">Kilogram</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ingredient (for weight/volume)</label>
+                        <select id="ingredient" onchange="convert()">
+                            <option value="water" selected>Water</option>
+                            <option value="flour">All-Purpose Flour</option>
+                            <option value="sugar">Granulated Sugar</option>
+                            <option value="butter">Butter</option>
+                            <option value="milk">Milk</option>
+                            <option value="oil">Vegetable Oil</option>
+                            <option value="honey">Honey</option>
+                            <option value="salt">Salt</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label" id="convLabel">1 tablespoon =</div>
+                <div class="result-hero-value" id="result">3 teaspoons</div>
+            </div>
+
+            <div class="card">
+                <h2>All Conversions</h2>
+                <div class="quick-grid" id="quickGrid"></div>
+            </div>
+
+            <div class="card">
+                <h2>Quick Reference - Volume</h2>
+                <table class="ref-table">
+                    <tr><th>Cups</th><th>Tbsp</th><th>Tsp</th><th>Fl Oz</th><th>mL</th></tr>
+                    <tr><td>1</td><td>16</td><td>48</td><td>8</td><td>237</td></tr>
+                    <tr><td>3/4</td><td>12</td><td>36</td><td>6</td><td>177</td></tr>
+                    <tr><td>1/2</td><td>8</td><td>24</td><td>4</td><td>118</td></tr>
+                    <tr><td>1/3</td><td>5.3</td><td>16</td><td>2.7</td><td>79</td></tr>
+                    <tr><td>1/4</td><td>4</td><td>12</td><td>2</td><td>59</td></tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Common Ingredient Weights (per cup)</h2>
+                <table class="ref-table">
+                    <tr><th>Ingredient</th><th>Grams</th><th>Ounces</th></tr>
+                    <tr><td>All-Purpose Flour</td><td>125g</td><td>4.4 oz</td></tr>
+                    <tr><td>Granulated Sugar</td><td>200g</td><td>7 oz</td></tr>
+                    <tr><td>Brown Sugar (packed)</td><td>220g</td><td>7.75 oz</td></tr>
+                    <tr><td>Butter</td><td>227g</td><td>8 oz</td></tr>
+                    <tr><td>Honey</td><td>340g</td><td>12 oz</td></tr>
+                </table>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="calorie-calculator.html" class="related-link">Calorie Calculator</a>
+                    <a href="unit-converter.html" class="related-link">Unit Converter</a>
+                    <a href="tip-calculator.html" class="related-link">Tip Calculator</a>
+                    <a href="temperature-converter.html" class="related-link">Temperature</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Volume units in ml
+        const volumeUnits = {
+            cup: 236.588,
+            tbsp: 14.7868,
+            tsp: 4.92892,
+            floz: 29.5735,
+            ml: 1,
+            liter: 1000
+        };
+
+        // Weight units in grams
+        const weightUnits = {
+            oz: 28.3495,
+            gram: 1,
+            lb: 453.592,
+            kg: 1000
+        };
+
+        // Grams per cup for ingredients
+        const ingredientDensity = {
+            water: 237,
+            flour: 125,
+            sugar: 200,
+            butter: 227,
+            milk: 245,
+            oil: 218,
+            honey: 340,
+            salt: 288
+        };
+
+        function convert() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const from = document.getElementById('fromUnit').value;
+            const to = document.getElementById('toUnit').value;
+            const ingredient = document.getElementById('ingredient').value;
+
+            const isFromVolume = volumeUnits.hasOwnProperty(from);
+            const isToVolume = volumeUnits.hasOwnProperty(to);
+            const isFromWeight = weightUnits.hasOwnProperty(from);
+            const isToWeight = weightUnits.hasOwnProperty(to);
+
+            let result;
+            if (isFromVolume && isToVolume) {
+                const inMl = amount * volumeUnits[from];
+                result = inMl / volumeUnits[to];
+            } else if (isFromWeight && isToWeight) {
+                const inGrams = amount * weightUnits[from];
+                result = inGrams / weightUnits[to];
+            } else if (isFromVolume && isToWeight) {
+                // Volume to weight using ingredient density
+                const inCups = amount * volumeUnits[from] / volumeUnits['cup'];
+                const inGrams = inCups * ingredientDensity[ingredient];
+                result = inGrams / weightUnits[to];
+            } else {
+                // Weight to volume
+                const inGrams = amount * weightUnits[from];
+                const inCups = inGrams / ingredientDensity[ingredient];
+                result = inCups * volumeUnits['cup'] / volumeUnits[to];
+            }
+
+            const displayResult = result < 0.01 ? result.toExponential(2) : (result % 1 === 0 ? result : result.toFixed(2));
+            document.getElementById('convLabel').textContent = `${amount} ${from} =`;
+            document.getElementById('result').textContent = `${displayResult} ${to}`;
+
+            // Quick conversions
+            const allUnits = {...volumeUnits, ...weightUnits};
+            let quickHTML = '';
+            ['cup', 'tbsp', 'tsp', 'ml', 'gram', 'oz'].forEach(unit => {
+                let conv;
+                if (isFromVolume && volumeUnits[unit]) {
+                    conv = (amount * volumeUnits[from]) / volumeUnits[unit];
+                } else if (isFromWeight && weightUnits[unit]) {
+                    conv = (amount * weightUnits[from]) / weightUnits[unit];
+                } else if (isFromVolume && weightUnits[unit]) {
+                    const inCups = amount * volumeUnits[from] / volumeUnits['cup'];
+                    conv = (inCups * ingredientDensity[ingredient]) / weightUnits[unit];
+                } else if (isFromWeight && volumeUnits[unit]) {
+                    const inCups = (amount * weightUnits[from]) / ingredientDensity[ingredient];
+                    conv = inCups * volumeUnits['cup'] / volumeUnits[unit];
+                }
+                if (conv !== undefined) {
+                    quickHTML += `<div class="quick-card"><div class="quick-value">${conv < 0.01 ? conv.toExponential(1) : conv.toFixed(2)}</div><div class="quick-label">${unit}</div></div>`;
+                }
+            });
+            document.getElementById('quickGrid').innerHTML = quickHTML;
+        }
+
+        convert();
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insulation Calculator - R-Value & Square Feet Needed | HomeCalcs</title>
+    <meta name="description" content="Free insulation calculator. Calculate how much insulation you need based on R-value, batts, rolls, or blown-in coverage.">
+    <meta name="keywords" content="insulation calculator, R-value calculator, fiberglass insulation, blown in insulation, attic insulation">
+    <link rel="canonical" href="https://homecalcs.xyz/insulation-calculator.html">
+    <style>
+        :root { --primary: #ec4899; --primary-dark: #db2777; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 35px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.8); }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.3rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 12px 15px; background: var(--bg-input); border-radius: 8px; margin-bottom: 8px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🧊 Insulation Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Area & Type</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Length (feet)</label>
+                        <input type="number" id="length" value="30" step="0.5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Width (feet)</label>
+                        <input type="number" id="width" value="20" step="0.5" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>R-Value Needed</label>
+                        <select id="rValue" onchange="calculate()">
+                            <option value="13">R-13 (Walls, 2x4)</option>
+                            <option value="19">R-19 (Walls, 2x6)</option>
+                            <option value="30">R-30 (Floors/Attic)</option>
+                            <option value="38" selected>R-38 (Attic)</option>
+                            <option value="49">R-49 (Attic, Cold Climate)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Insulation Type</label>
+                        <select id="type" onchange="calculate()">
+                            <option value="batts" selected>Batts/Rolls (Fiberglass)</option>
+                            <option value="blown">Blown-in (Loose Fill)</option>
+                            <option value="spray">Spray Foam</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="result-hero">
+                    <div class="result-hero-label">Coverage Needed</div>
+                    <div class="result-hero-value" id="coverage">0 sq ft</div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="packages">0</div>
+                        <div class="result-label">Packages/Bags</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="thickness">0"</div>
+                        <div class="result-label">Thickness Needed</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="cost">$0</div>
+                        <div class="result-label">Est. Material Cost</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Recommended R-Values by Zone</h2>
+                <div class="breakdown-row"><span>Zone 1-2 (Hot)</span><span>R-30 to R-49 (Attic)</span></div>
+                <div class="breakdown-row"><span>Zone 3-4 (Mixed)</span><span>R-38 to R-60 (Attic)</span></div>
+                <div class="breakdown-row"><span>Zone 5-8 (Cold)</span><span>R-49 to R-60 (Attic)</span></div>
+                <div class="breakdown-row"><span>Exterior Walls</span><span>R-13 to R-21</span></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="drywall-calculator.html" class="related-link">🏠 Drywall</a>
+                    <a href="hvac-calculator.html" class="related-link">❄️ HVAC</a>
+                    <a href="energy-calculator.html" class="related-link">⚡ Energy</a>
+                    <a href="square-footage-calculator.html" class="related-link">📐 Square Footage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const coveragePerPkg = {
+            batts: { 13: 40, 19: 48, 30: 40, 38: 32, 49: 24 },
+            blown: { 13: 30, 19: 25, 30: 20, 38: 15, 49: 12 },
+            spray: { 13: 200, 19: 150, 30: 100, 38: 75, 49: 50 }
+        };
+        const thicknessMap = { 13: 3.5, 19: 6.25, 30: 9.5, 38: 12, 49: 16 };
+        const costPerPkg = { batts: 45, blown: 35, spray: 150 };
+
+        function calculate() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const rValue = parseInt(document.getElementById('rValue').value);
+            const type = document.getElementById('type').value;
+
+            const sqft = length * width;
+            const coverage = coveragePerPkg[type][rValue] || 40;
+            const packages = Math.ceil(sqft / coverage);
+            const thickness = thicknessMap[rValue];
+            const cost = packages * costPerPkg[type];
+
+            document.getElementById('coverage').textContent = sqft.toFixed(0) + ' sq ft';
+            document.getElementById('packages').textContent = packages;
+            document.getElementById('thickness').textContent = thickness + '"';
+            document.getElementById('cost').textContent = '$' + cost;
+        }
+        calculate();
+    </script>
+</body>
+</html>

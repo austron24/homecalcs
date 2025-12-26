@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Size Calculator - What Size Generator Do I Need? | HomeCalcs</title>
+    <meta name="description" content="Free generator size calculator. Calculate the right generator wattage for your home or job site. Add up your appliances and find the perfect fit.">
+    <meta name="keywords" content="generator size calculator, generator wattage, what size generator, power calculator, backup generator">
+    <link rel="canonical" href="https://homecalcs.xyz/generator-size-calculator.html">
+    <style>
+        :root { --primary: #ef4444; --primary-dark: #dc2626; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .item-list { max-height: 400px; overflow-y: auto; }
+        .item-row { display: flex; justify-content: space-between; align-items: center; background: var(--bg-input); padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; }
+        .item-info { flex: 1; }
+        .item-name { font-weight: 500; }
+        .item-watts { color: var(--text-secondary); font-size: 0.9rem; }
+        .item-controls { display: flex; align-items: center; gap: 8px; }
+        .item-btn { width: 32px; height: 32px; border: none; border-radius: 6px; cursor: pointer; font-size: 1.2rem; background: var(--primary); color: white; }
+        .item-count { width: 40px; text-align: center; font-weight: bold; }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 3rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .size-option { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
+        .size-option.recommended { border: 2px solid var(--success); }
+        .tag { background: var(--success); color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 10px; }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>⚡ Generator Size Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>🔌 Select Your Appliances</h2>
+                <div class="item-list" id="itemList"></div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Recommended Generator</div>
+                <div class="result-hero-value" id="recommendedSize">0 Watts</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="runningWatts">0</div>
+                    <div class="result-label">Running Watts</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="startingWatts">0</div>
+                    <div class="result-label">Starting Watts</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="totalAmps">0</div>
+                    <div class="result-label">Total Amps @120V</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🔋 Generator Options</h2>
+                <div id="genOptions"></div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="electricity-cost-calculator.html" class="related-link">⚡ Electric Cost</a>
+                    <a href="appliance-cost-calculator.html" class="related-link">🔌 Appliance Cost</a>
+                    <a href="solar-calculator.html" class="related-link">☀️ Solar Calculator</a>
+                    <a href="wire-gauge-calculator.html" class="related-link">🔧 Wire Gauge</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const appliances = [
+            { name: 'Refrigerator', running: 150, starting: 600, emoji: '🧊' },
+            { name: 'Freezer', running: 150, starting: 500, emoji: '❄️' },
+            { name: 'Window AC (10,000 BTU)', running: 1200, starting: 3600, emoji: '❄️' },
+            { name: 'Central AC (3 ton)', running: 3500, starting: 7500, emoji: '🏠' },
+            { name: 'Sump Pump (1/3 HP)', running: 500, starting: 1200, emoji: '💧' },
+            { name: 'Well Pump (1 HP)', running: 1000, starting: 3000, emoji: '💧' },
+            { name: 'Electric Water Heater', running: 4500, starting: 4500, emoji: '🔥' },
+            { name: 'Space Heater', running: 1500, starting: 1500, emoji: '🔥' },
+            { name: 'Microwave', running: 1000, starting: 1000, emoji: '📦' },
+            { name: 'Coffee Maker', running: 1000, starting: 1000, emoji: '☕' },
+            { name: 'Toaster', running: 1200, starting: 1200, emoji: '🍞' },
+            { name: 'TV (LED)', running: 100, starting: 100, emoji: '📺' },
+            { name: 'Computer', running: 200, starting: 200, emoji: '💻' },
+            { name: 'Phone Charger', running: 25, starting: 25, emoji: '📱' },
+            { name: 'Lights (5 bulbs)', running: 75, starting: 75, emoji: '💡' },
+            { name: 'Garage Door Opener', running: 700, starting: 1400, emoji: '🚗' },
+            { name: 'Electric Stove', running: 2500, starting: 2500, emoji: '🍳' },
+            { name: 'Washing Machine', running: 500, starting: 1200, emoji: '🫧' },
+            { name: 'Electric Dryer', running: 3000, starting: 3000, emoji: '👕' }
+        ];
+
+        const genSizes = [
+            { watts: 2000, name: '2,000W Inverter', desc: 'Essentials only', price: '$400-$800' },
+            { watts: 3500, name: '3,500W Portable', desc: 'Basic backup', price: '$500-$1,000' },
+            { watts: 5000, name: '5,000W Portable', desc: 'Most homes (partial)', price: '$600-$1,200' },
+            { watts: 7500, name: '7,500W Portable', desc: 'Most homes (full)', price: '$800-$1,500' },
+            { watts: 10000, name: '10,000W Portable', desc: 'Large home', price: '$1,200-$2,000' },
+            { watts: 14000, name: '14kW Standby', desc: 'Whole house', price: '$3,500-$5,500' },
+            { watts: 22000, name: '22kW Standby', desc: 'Large whole house', price: '$5,000-$7,500' }
+        ];
+
+        const counts = {};
+        appliances.forEach(a => counts[a.name] = 0);
+
+        function renderItems() {
+            const list = document.getElementById('itemList');
+            list.innerHTML = appliances.map(a => `
+                <div class="item-row">
+                    <div class="item-info">
+                        <div class="item-name">${a.emoji} ${a.name}</div>
+                        <div class="item-watts">${a.running}W running / ${a.starting}W starting</div>
+                    </div>
+                    <div class="item-controls">
+                        <button class="item-btn" onclick="adjust('${a.name}', -1)">-</button>
+                        <span class="item-count" id="count-${a.name.replace(/[^a-zA-Z]/g, '')}">${counts[a.name]}</span>
+                        <button class="item-btn" onclick="adjust('${a.name}', 1)">+</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function adjust(name, delta) {
+            counts[name] = Math.max(0, counts[name] + delta);
+            document.getElementById(`count-${name.replace(/[^a-zA-Z]/g, '')}`).textContent = counts[name];
+            calculate();
+        }
+
+        function calculate() {
+            let runningWatts = 0;
+            let maxStarting = 0;
+
+            appliances.forEach(a => {
+                const count = counts[a.name];
+                runningWatts += a.running * count;
+                maxStarting = Math.max(maxStarting, a.starting * count);
+            });
+
+            // Total starting = running + highest starting surge
+            const startingWatts = runningWatts + maxStarting - (appliances.find(a => counts[a.name] > 0 && a.starting === maxStarting)?.running || 0);
+            const totalAmps = Math.round(runningWatts / 120);
+
+            // Recommend generator 20% above starting watts
+            const neededWatts = startingWatts * 1.2;
+            let recommended = genSizes[0];
+            for (const gen of genSizes) {
+                if (gen.watts >= neededWatts) {
+                    recommended = gen;
+                    break;
+                }
+            }
+
+            document.getElementById('runningWatts').textContent = runningWatts.toLocaleString();
+            document.getElementById('startingWatts').textContent = startingWatts.toLocaleString();
+            document.getElementById('totalAmps').textContent = totalAmps;
+            document.getElementById('recommendedSize').textContent = recommended.name;
+
+            // Render options
+            document.getElementById('genOptions').innerHTML = genSizes.map(gen => {
+                const isRec = gen === recommended;
+                const fits = gen.watts >= neededWatts;
+                return `
+                    <div class="size-option ${isRec ? 'recommended' : ''}">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: bold; color: var(--secondary);">${gen.name}${isRec ? '<span class="tag">Recommended</span>' : ''}</span>
+                            <span style="color: var(--accent);">${gen.price}</span>
+                        </div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 5px;">${gen.desc} ${fits ? '✓' : '(may be undersized)'}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        renderItems();
+        calculate();
+    </script>
+</body>
+</html>

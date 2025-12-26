@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://quge5.com/88/tag.min.js" data-zone="196361" async data-cfasync="false"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attic Insulation Calculator - R-Value & Cost Estimator | HomeCalcs</title>
+    <meta name="description" content="Free attic insulation calculator. Estimate how much insulation you need and the cost. Calculate R-value requirements by climate zone.">
+    <meta name="keywords" content="attic insulation calculator, insulation R-value, blown insulation, fiberglass insulation, insulation cost">
+    <link rel="canonical" href="https://homecalcs.xyz/attic-insulation-calculator.html">
+    <style>
+        :root { --primary: #f97316; --primary-dark: #ea580c; --secondary: #22d3ee; --accent: #f59e0b; --bg-dark: #0f172a; --bg-card: #1e293b; --bg-input: #334155; --text-primary: #f1f5f9; --text-secondary: #94a3b8; --border: #475569; --success: #10b981; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg-dark); color: var(--text-primary); min-height: 100vh; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 1fr 160px; gap: 20px; }
+        .content-area { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .card { background: var(--bg-card); border-radius: 16px; padding: 24px; }
+        .card h2 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text-secondary); }
+        input, select { width: 100%; padding: 15px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: var(--bg-input); color: var(--text-primary); }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .result-hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 40px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .result-hero-value { font-size: 2.5rem; font-weight: 800; color: white; }
+        .result-hero-label { color: rgba(255,255,255,0.9); font-size: 1.2rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .result-card { background: var(--bg-input); padding: 20px; border-radius: 12px; text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .result-label { color: var(--text-secondary); margin-top: 5px; font-size: 0.85rem; }
+        .info-box { background: var(--bg-input); padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid var(--success); }
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        .related-link { display: block; padding: 12px 16px; background: var(--bg-input); border-radius: 8px; color: var(--text-primary); text-decoration: none; }
+        .related-link:hover { background: var(--primary); }
+        @media (max-width: 968px) { .main-container { grid-template-columns: 1fr; } .sidebar { display: none; } }
+        @media (max-width: 640px) { .form-grid, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>(function(s){s.dataset.zone='10379224',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body>
+    </div>
+    </div>
+
+    <header class="header">
+        <h1>🧊 Attic Insulation Calculator</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="content-area">
+            <div class="card">
+                <h2>📐 Attic Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Attic Square Footage</label>
+                        <input type="number" id="sqft" value="1000" min="100" oninput="calculate()">
+                    </div>
+                    <div class="form-group">
+                        <label>Climate Zone</label>
+                        <select id="zone" onchange="calculate()">
+                            <option value="1">Zone 1 (Hot - Miami, Hawaii)</option>
+                            <option value="2">Zone 2 (Hot-Humid - Houston, Phoenix)</option>
+                            <option value="3">Zone 3 (Warm - LA, Atlanta)</option>
+                            <option value="4" selected>Zone 4 (Mixed - Seattle, DC)</option>
+                            <option value="5">Zone 5 (Cold - Chicago, Denver)</option>
+                            <option value="6">Zone 6 (Cold - Minneapolis, Boston)</option>
+                            <option value="7">Zone 7 (Very Cold - Maine, Montana)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Insulation Type</label>
+                        <select id="type" onchange="calculate()">
+                            <option value="blown_fiberglass" selected>Blown Fiberglass</option>
+                            <option value="blown_cellulose">Blown Cellulose</option>
+                            <option value="batt_fiberglass">Fiberglass Batts</option>
+                            <option value="spray_open">Spray Foam (Open Cell)</option>
+                            <option value="spray_closed">Spray Foam (Closed Cell)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Current R-Value (if any)</label>
+                        <select id="current" onchange="calculate()">
+                            <option value="0" selected>None / Unknown</option>
+                            <option value="13">R-13 (about 4")</option>
+                            <option value="19">R-19 (about 6")</option>
+                            <option value="30">R-30 (about 10")</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-hero">
+                <div class="result-hero-label">Estimated Project Cost</div>
+                <div class="result-hero-value" id="totalCost">$0 - $0</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="targetR">R-0</div>
+                    <div class="result-label">Target R-Value</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="addR">R-0</div>
+                    <div class="result-label">R-Value to Add</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="depth">0"</div>
+                    <div class="result-label">Insulation Depth</div>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-value" id="bags">0</div>
+                    <div class="result-label">Bags Needed</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="perSqFt">$0</div>
+                    <div class="result-label">Cost Per Sq Ft</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value" id="savings">$0</div>
+                    <div class="result-label">Annual Energy Savings</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💡 Energy Savings</h2>
+                <div class="info-box">
+                    <strong>Estimated payback period:</strong> <span id="payback">0</span> years<br>
+                    Proper attic insulation can reduce heating/cooling costs by <strong>15-25%</strong>.
+                </div>
+            </div>
+
+            </div>
+
+            <div class="card">
+                <h2>🔗 Related Tools</h2>
+                <div class="related-tools">
+                    <a href="insulation-calculator.html" class="related-link">🧱 Wall Insulation</a>
+                    <a href="hvac-calculator.html" class="related-link">❄️ HVAC Sizing</a>
+                    <a href="electricity-cost-calculator.html" class="related-link">⚡ Electric Cost</a>
+                    <a href="roofing-calculator.html" class="related-link">🏠 Roofing</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const zoneR = { 1: 30, 2: 38, 3: 38, 4: 49, 5: 49, 6: 49, 7: 60 };
+        const insulation = {
+            blown_fiberglass: { rPerInch: 2.5, costLow: 0.8, costHigh: 1.2, coveragePerBag: 40 },
+            blown_cellulose: { rPerInch: 3.5, costLow: 0.9, costHigh: 1.4, coveragePerBag: 35 },
+            batt_fiberglass: { rPerInch: 3.2, costLow: 0.7, costHigh: 1.0, coveragePerBag: 0 },
+            spray_open: { rPerInch: 3.7, costLow: 1.5, costHigh: 2.5, coveragePerBag: 0 },
+            spray_closed: { rPerInch: 6.5, costLow: 3.0, costHigh: 5.0, coveragePerBag: 0 }
+        };
+
+        function calculate() {
+            const sqft = parseFloat(document.getElementById('sqft').value) || 1000;
+            const zone = document.getElementById('zone').value;
+            const type = document.getElementById('type').value;
+            const currentR = parseInt(document.getElementById('current').value);
+            
+            const targetR = zoneR[zone];
+            const addR = Math.max(0, targetR - currentR);
+            const ins = insulation[type];
+            const depth = addR / ins.rPerInch;
+            
+            const costLow = sqft * ins.costLow;
+            const costHigh = sqft * ins.costHigh;
+            const avgCost = (costLow + costHigh) / 2;
+            const perSqFt = sqft > 0 ? (avgCost / sqft).toFixed(2) : 0;
+            
+            // Bags calculation (for blown insulation)
+            const bags = ins.coveragePerBag > 0 ? Math.ceil(sqft / ins.coveragePerBag * (depth / 10)) : 0;
+            
+            // Energy savings estimate (roughly $0.20-0.30 per sqft per year improvement)
+            const savingsRate = addR > 20 ? 0.25 : addR > 10 ? 0.18 : 0.12;
+            const annualSavings = Math.round(sqft * savingsRate);
+            const payback = annualSavings > 0 ? (avgCost / annualSavings).toFixed(1) : 0;
+
+            document.getElementById('totalCost').textContent = '$' + Math.round(costLow).toLocaleString() + ' - $' + Math.round(costHigh).toLocaleString();
+            document.getElementById('targetR').textContent = 'R-' + targetR;
+            document.getElementById('addR').textContent = 'R-' + addR;
+            document.getElementById('depth').textContent = depth.toFixed(1) + '"';
+            document.getElementById('bags').textContent = bags > 0 ? bags : 'N/A';
+            document.getElementById('perSqFt').textContent = '$' + perSqFt;
+            document.getElementById('savings').textContent = '$' + annualSavings;
+            document.getElementById('payback').textContent = payback;
+        }
+
+        calculate();
+    </script>
+</body>
+</html>
